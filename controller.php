@@ -15,6 +15,10 @@ switch ($action) {
 	doInsertp();
 	break;
 
+	case 'addans' :
+	doInsertans();
+	break;
+
 	case 'edit' :
 	doEdit();
 	break;
@@ -76,6 +80,44 @@ switch ($action) {
 		}  
 	}
 
+	function doInsertans(){ 
+		if(isset($_POST['save1'])){ 
+
+			$name = $_POST['studentName'];
+			$email1  = $_POST['studentEmail'];
+			$chapter = $_POST['chapter'];
+			$title  = $_POST['questionTitle'];
+			$quid = $_POST['questionId'];
+			
+			$category = "";
+
+			$filename = UploadImage();
+			$location = "files/". $filename ;
+
+			$answer = new answer();
+			$answer->studentName = $name;
+			$answer->studentEmail  = $email1;
+			$answer->chapter  = $chapter;
+			$answer->questionTitle  = $title;
+			$answer->questionId  = $quid;
+			$answer->FileLocation  = $location;
+			$answer->create(); 
+
+			message("Lesson has been saved in the database.", "success");
+			redirect("account.php?q=1");
+			
+		}/*{
+			$filename = UploadImage();
+			$location = "files/". $filename ;
+			$answer = new answer();
+			$answer->FileLocation  = $location;
+			$answer->update($id); 
+
+			message("Lesson has been saved in the database.", "success");
+			redirect("account.php?q=1");
+		}  */
+	}
+
 	function doEdit(){ 
 		if(isset($_POST['save'])){  
 			$chapter = $_POST['LessonChapter'];
@@ -96,10 +138,7 @@ switch ($action) {
 
 				message("Lesson has been saved in the database.", "success");
 				redirect("dash.php?q=6");
-		 
-
 			
-	 		
 		}
 	}
 

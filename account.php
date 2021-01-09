@@ -66,10 +66,11 @@ echo '<span class="pull-right top title1" ><span class="log1"><span class="glyph
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li <?php if(@$_GET['q']==1) echo'class="active"'; ?> ><a href="account.php?q=1"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Home<span class="sr-only">(current)</span></a></li> 
+        <li <?php if(@$_GET['q']==1) echo'class="active"'; ?> ><a href="account.php?q=1"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Lesson<span class="sr-only">(current)</span></a></li>
+			<li <?php if(@$_GET['q']==4) echo'class="active"'; ?>><a href="account.php?q=4"><span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;Quiz</a></li>		
 	    	<li <?php if(@$_GET['q']==2) echo'class="active"'; ?>><a href="account.php?q=2"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>&nbsp;History</a></li>
 	    	<li <?php if(@$_GET['q']==3) echo'class="active"'; ?>><a href="account.php?q=3"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;Ranking</a></li>
-			<li <?php if(@$_GET['q']==4) echo'class="active"'; ?>><a href="account.php?q=4"><span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;Lesson</a></li>
+			
 	    	<li class="pull-right"> <a href="logout.php?q=account.php"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;Signout</a></li>
 		</ul>
             <form class="navbar-form navbar-left" role="search">
@@ -86,7 +87,7 @@ echo '<span class="pull-right top title1" ><span class="log1"><span class="glyph
 <div class="col-md-12">
 
 <!--home start-->
-<?php if(@$_GET['q']==1) {
+<?php if(@$_GET['q']==4) {
 
 $result = mysqli_query($con,"SELECT * FROM quiz ORDER BY date DESC") or die('Error');
 echo  '<div class="panel"><div class="table-responsive"><table class="table table-striped title1">
@@ -247,7 +248,7 @@ echo '</table></div></div>';}
 
 //lesson start
 //<!--lesson start-->
-if(@$_GET['q']==4) {
+if(@$_GET['q']==1) {
 
   echo ' <h3 align="center" >List of Lessons  </h3> ';
 
@@ -312,6 +313,7 @@ echo '<tr><td style="color:#99cc32"><b>'.$c.'</b></td><td>'.$c1.'</td><td>'.$t.'
 if ($categ=="") {
   # code...
   $view = "account.php?q=11&id=".$lid;
+  $view1 = "account.php?q=13&id=".$lid;
 }else{
   $view = "account.php?q=11&id=".$lid;
 
@@ -325,7 +327,7 @@ echo '<td >
 
  echo '<td > 
  <a href="'.$l.'" class="btn btn-primary btn-xs  " download><i class="fa fa-download"></i> Downlaod</a>
-<a title="View Files"  href="'.$view.'" class="btn btn-info btn-xs" ><span class="fa fa-info fw-fa"></span> View</a>
+<a title="View Files"  href="'.$view1.'" class="btn btn-info btn-xs" ><span class="fa fa-info fw-fa"></span> Submit</a>
  </td>';
 
 echo '<td>';
@@ -334,6 +336,137 @@ echo '<td>';
 echo '</table></div></div>';
 }
 ?>
+<!-- answer upload -->
+<?php if(@$_GET['q']==13) {
+  require_once ("include/initialize.php");
+@$id = $_GET['id'];
+ if($id==''){
+//redirect("index.php");
+}
+
+$name = $_SESSION['name'];
+$email=$_SESSION['email'];
+
+$lesson = New Lesson();
+$res = $lesson->single_lesson($id);
+$lc = $res->LessonChapter;
+$lid = $res->LessonID;
+$lt = $res->LessonTitle; 
+$fl = $res->FileLocation;
+$cc = $res->Category;
+$title = "view file";
+
+
+echo '<form class="form-horizontal span6" action="controller.php?action=addans" method="POST" enctype="multipart/form-data">
+
+<div class="row">
+<div class="col-lg-12">
+ <h1 class="page-header">Upload Your Answer</h1>
+</div>
+<!-- /.col-lg-12 -->
+</div> 
+
+ <div class="form-group">
+         <div class="col-md-11">
+           <label class="col-md-2 control-label" for=
+           "LessonChapter">Your Name:</label>
+
+           <div class="col-md-10">
+             <input name="deptid" type="hidden" value="">
+              <input class="form-control input-sm" id="studentName" name="studentName" placeholder=
+                 "'.$name.'" type="text" value="'.$name.'">
+           </div>
+         </div>
+       </div>
+       <div class="form-group">
+         <div class="col-md-11">
+           <label class="col-md-2 control-label" for=
+           "LessonChapter">Your Email:</label>
+
+           <div class="col-md-10">
+             <input name="deptid" type="hidden" value="">
+              <input class="form-control input-sm" id="studentEmail" name="studentEmail" placeholder=
+                 "'.$email.'" type="text" value="'.$email.'">
+           </div>
+         </div>
+       </div>
+           
+        <div class="form-group">
+         <div class="col-md-11">
+           <label class="col-md-2 control-label" for=
+           "LessonTitle">Chapter:</label>
+
+           <div class="col-md-10">
+             <input name="deptid" type="hidden" value="">
+              <input class="form-control input-sm" id="chapter" name="chapter" placeholder=
+                 "'.$lc.'" type="text" value="'.$lc.'">
+           </div>
+         </div>
+       </div>
+       <div class="form-group">
+         <div class="col-md-11">
+           <label class="col-md-2 control-label" for=
+           "LessonTitle">Question title:</label>
+           <div class="col-md-10">
+             <input name="deptid" type="hidden" value="">
+              <input class="form-control input-sm" id="questionTitle" name="questionTitle" placeholder=
+                 "'.$lt.'" type="text" value="'.$lt.'">
+           </div>
+         </div>
+       </div>
+       <div class="form-group">
+         <div class="col-md-11">
+           <label class="col-md-2 control-label" for=
+           "LessonTitle">Question ID:</label>
+           <div class="col-md-10">
+             <input name="deptid" type="hidden" value="">
+              <input class="form-control input-sm" id="questionId" name="questionId" placeholder=
+                 "'.$lid.'" type="text" value="'.$lid.'">
+           </div>
+         </div>
+       </div>
+
+        
+
+        <div class="form-group">
+         <div class="col-md-11">
+           <label class="col-md-2" align = "right"for=
+           "file">Upload File:</label>
+
+           <div class="col-md-10">
+           <input type="file" name="file"/>
+           </div>
+         </div>
+       </div>
+
+  <div class="form-group">
+         <div class="col-md-11">
+           <label class="col-md-2 control-label" for=
+           "idno"></label>
+
+           <div class="col-md-10">
+            <button class="btn btn-primary btn-sm" name="save1" type="submit" ><span class="fa fa-save fw-fa"></span>  Save</button> 
+           
+              </div>
+         </div>
+       </div> 
+</form> ';
+
+$answer = new answer();
+$res1 = $answer->single_answer($id, $email);
+$ansfl = $res1->FileLocation;
+if($ansfl==""){
+  echo '<h2></h2>';
+}else{
+echo '<h2><?php echo '.$title.' ; ?></h2>
+<p style="font-size: 18px;font-weight: bold;">Uploaded Answer File: </p>
+<div class="container">
+	<embed src="'.$ansfl.'" type="application/pdf" width="100%" height="600px" />
+</div>';}
+}
+
+?>
+<!-- answer upload end -->
 
 <!--account view pdf start-->
 <?php if(@$_GET['q']==11) {
@@ -377,23 +510,24 @@ $cc = $res->Category;
 
 
 echo '
-<h3>Play Video</h3> 
+
+<center><h3>Play Video</h3> 
 <div class="container" >
- <video width="420" heigth="240" controls>
+ <video width="80%" heigth="auto" controls>
     <source src="'.$fl.'" type="video/mp4">
     <source src="'.$fl.'" type="video/ogg"> 
   </video>
-    
-      <div class="col-lg-12">Description</div>
-       <div class="col-lg-12">
-         <label class="col-md-2" class="control-label">Chapter  :</label>
-         <label class="col-md-10" class="control-label">'.$lc.'</label>
+    <div style="display: flex; justify-content: center">
+      <div class="" style="padding: 10px 50px 20px 0px">Description:></div>
+       <div class="" >
+         <label style="padding: 10px 50px 20px 0px" class="" class="control-label">Chapter: '.$lc.'</label>
+         <!--<label class="col-md-10" class="control-label">'.$lc.'</label>-->
        </div>
-       <div class="col-lg-12">
-         <label class="col-md-2" class="control-label">Title   : </label>
-         <label class="col-md-10" class="control-label">'.$lt.'</label>
-       </div> 
-</div> 
+       <div class="">
+         <label style="padding: 10px 50px 20px 0px" class="" class="control-label">Title: '.$lt.' </label>
+        <!-- <label class="col-md-10" class="control-label">'.$lt.'</label>-->
+       </div> </div>
+</div> </center>
   ';
 }
 ?>

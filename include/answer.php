@@ -1,8 +1,8 @@
 <?php
 require_once(LIB_PATH.DS.'database.php');
  // SELECT `LessonID`, `EVENT_TEXT`, `EVENT_WHAT`, `EVENT_WHEN`, `EVENT_WHERE` FROM `tblevent` WHERE 1
- class Lesson {
-	protected static  $tblname = "lesson";
+ class answer {
+	protected static  $tblname = "questionanswer";
 
 	function dbfields () {
 		global $mydb;
@@ -31,10 +31,10 @@ require_once(LIB_PATH.DS.'database.php');
 		return $row_count;
 	}
 	 
-	function single_lesson($id=0){
+	function single_answer($id=0, $studentEmail=""){
 			global $mydb;
 			$mydb->setQuery("SELECT * FROM ".self::$tblname." 
-				Where LessonID= '{$id}' LIMIT 1");
+				Where questionId= '{$id}' AND studentEmail= '{$studentEmail}' LIMIT 1");
 			$cur = $mydb->loadSingleResult();
 			return $cur;
 	}
@@ -121,7 +121,7 @@ require_once(LIB_PATH.DS.'database.php');
 		}
 		$sql = "UPDATE ".self::$tblname." SET ";
 		$sql .= join(", ", $attribute_pairs);
-		$sql .= " WHERE LessonID=". $id;
+		$sql .= " WHERE questionId=". $id  ;
 	  $mydb->setQuery($sql);
 	 	if(!$mydb->executeQuery()) return false; 	
 		
