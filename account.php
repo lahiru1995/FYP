@@ -325,9 +325,9 @@ echo '<td >
  </td>';
 
 
- echo '<td > 
- <a href="'.$l.'" class="btn btn-primary btn-xs  " download><i class="fa fa-download"></i> Downlaod</a>
-<a title="View Files"  href="'.$view1.'" class="btn btn-info btn-xs" ><span class="fa fa-info fw-fa"></span> Submit</a>
+ echo '<td >
+ <!--<a href="'.$l.'" class="btn btn-primary btn-xs  " download><i class="fa fa-download"></i> Downlaod</a>-->
+<a title="View Files"  href="'.$view1.'" class="btn btn-info btn-xs" ><span class="fa fa-info fw-fa"></span> Submit Answer</a>
  </td>';
 
 echo '<td>';

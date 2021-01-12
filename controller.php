@@ -22,6 +22,10 @@ switch ($action) {
 	case 'edit' :
 	doEdit();
 	break;
+
+	case 'editmarks' :
+	doEditmarks();
+	break;
 	
 	case 'delete' :
 	doDelete();
@@ -116,6 +120,29 @@ switch ($action) {
 			message("Lesson has been saved in the database.", "success");
 			redirect("account.php?q=1");
 		}  */
+	}
+
+
+	function doEditmarks(){ 
+		if(isset($_POST['save3'])){  
+			$mar = $_POST['marks'];
+			$fl  = $_POST['flocation'];
+			$fid  = $_POST['fid'];
+ 
+				// $filename = UploadImage();
+				// $location = "files/". $filename ;
+
+				$answer = new answer();
+				$answer->marks = $mar;
+				//$answer->LessonTitle   = $title;
+				
+				// $lesson->FileLocation  = $location;
+				$answer->update1($fl); 
+
+				message("Lesson has been saved in the database.", "success");
+				redirect("dash.php?q=15&id=".$fid);
+			
+		}
 	}
 
 	function doEdit(){ 

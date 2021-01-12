@@ -39,6 +39,14 @@ require_once(LIB_PATH.DS.'database.php');
 			return $cur;
 	}
 
+	function single_answer1($id=0){
+		global $mydb;
+		$mydb->setQuery("SELECT * FROM ".self::$tblname." 
+			Where questionId= '{$id}' LIMIT 1");
+		$cur = $mydb->loadSingleResult();
+		return $cur;
+}
+
 	 
 	/*---Instantiation of Object dynamically---*/
 	static function instantiate($record) {
@@ -126,6 +134,21 @@ require_once(LIB_PATH.DS.'database.php');
 	 	if(!$mydb->executeQuery()) return false; 	
 		
 	}
+
+	public function update1($fl="") {
+		global $mydb;
+		  $attributes = $this->sanitized_attributes();
+		  $attribute_pairs = array();
+		  foreach($attributes as $key => $value) {
+			$attribute_pairs[] = "{$key}='{$value}'";
+		  }
+		  $sql = "UPDATE ".self::$tblname." SET ";
+		  $sql .= join(", ", $attribute_pairs);
+		  $sql .= " WHERE FileLocation='{$fl}'" ;
+		$mydb->setQuery($sql);
+		   if(!$mydb->executeQuery()) return false; 	
+		  
+	  }
 
 	public function delete($id=0) {
 		global $mydb;

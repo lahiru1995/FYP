@@ -224,7 +224,7 @@ echo ' <h3 align="center" >List of Question papers | Add <a href="dash.php?q=13"
 $qp=mysqli_query($con,"SELECT * FROM lesson where Category=''" )or die('Error223');
 echo  '<div class="panel title"><div class="table-responsive">
 <table class="table table-striped title1" >
-<tr style="color:red"><td><b>No</b></td><td><b>Chapter</b></td><td><b>Question Paper Title</b></td><td><b>Action</b></td></tr>';
+<tr style="color:red"><td><b>No</b></td><td><b>Chapter</b></td><td><b>Question Paper Title</b></td><td><b>Action</b></td><td><b>Answers</b></td></tr>';
 $c=0;
 while($row=mysqli_fetch_array($qp) )
 {
@@ -249,12 +249,72 @@ echo '<td > <a title="Edit Details" href="dash.php?q=14&id='.$lid.'"  class="btn
 <a title="Change File" href="dash.php?q=9&id='.$lid.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-upload fw-fa"></span> Change File</a> 
  <a title="View Files"  href="'.$view.'" class="btn btn-info btn-xs" ><span class="fa fa-info fw-fa"></span> View</a>
  <a title="Delete" href="controller.php?action=delete&id='.$lid.'" class="btn btn-danger btn-xs" ><span class="fa fa-trash-o fw-fa"></span> Delete</a>
- </td>';
+ </td>
+ <td > <a title="Edit Details" href="dash.php?q=15&id='.$lid.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-edit fw-fa"></span>View Student Answers</a> </td>';
 
 echo '<td>';
 }
 echo '</table></div></div>';
 }?>
+
+<!--view answers table start-->
+<?php if(@$_GET['q']==15) {
+  require_once ("include/initialize.php");
+@$id = $_GET['id'];
+ if($id==''){
+//redirect("index.php");
+}
+
+$qp=mysqli_query($con,"SELECT * FROM questionanswer where questionId='{$id}'" )or die('Error223');
+$c=0;
+echo  '<div class="panel title"><div class="table-responsive">
+<table class="table table-striped title1" >
+<tr style="color:red"><td><b>No</b></td><td><b>Name</b></td><td><b>Email</b></td><td><b>Answers</b></td><td><b>Add Marks</b></td></tr>';
+while($row=mysqli_fetch_array($qp) )
+{
+$sn=$row['studentName'];
+$se=$row['studentEmail'];
+$ll=$row['FileLocation'];
+$ql=$row['questionId'];
+
+$view2 = "dash.php?q=16&id=".$ql;
+
+$c++;
+echo '<tr><td style="color:#99cc32"><b>'.$c.'</b></td><td>'.$sn.'</td><td>'.$se.'</td>';
+echo '<td ><a title="View Files"  href="'.$view2.'" class="btn btn-info btn-xs" ><span class="fa fa-info fw-fa"></span> View</a></td>';
+echo '<td> <form action="controller.php?action=editmarks"  method="POST" enctype="multipart/form-data">
+<input class=" " id="marks" name="marks" placeholder="Enter Marks" type="text" value=""> 
+<input name="flocation" id="flocation" type="hidden" type="text" value="'.$ll.'">
+<input name="fid" id="fid" type="hidden" type="text" value="'.$ql.'">
+<button class="btn btn-primary btn-sm" name="save3" type="submit" ><span class="fa fa-save fw-fa"></span>Add</button> 
+ 
+  </form></td>';
+}
+echo '</table></div></div>';
+
+}
+?>
+<!--view submitted answer-->
+<?php if(@$_GET['q']==16) {
+  require_once ("include/initialize.php");
+@$id = $_GET['id'];
+ if($id==''){
+//redirect("index.php");
+}
+$answer = New answer();
+$res = $answer->single_answer1($id);
+
+$fl = $res->FileLocation;
+$sn = $res->studentName;
+$se = $res->studentEmail;
+
+echo '
+<p style="font-size: 18px;font-weight: bold;">Student Name : '.$sn.' | Email : '.$se.'</p>
+<div class="container">
+	<embed src="'.$fl.'" type="application/pdf" width="100%" height="600px" />
+</div>';
+}
+?>
 <!--feedback start-->
 <?php if(@$_GET['q']==3) {
 $result = mysqli_query($con,"SELECT * FROM `feedback` ORDER BY `feedback`.`date` DESC") or die('Error');
