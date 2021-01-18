@@ -14,6 +14,7 @@
   <script src="js/bootstrap.min.js"  type="text/javascript"></script>
  	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
 
+
 <script>
 $(function () {
     $(document).on( 'scroll', function(){
@@ -268,7 +269,7 @@ echo '</table></div></div>';
 $qp=mysqli_query($con,"SELECT * FROM questionanswer where questionId='{$id}'" )or die('Error223');
 $c=0;
 echo  '<div class="panel title"><div class="table-responsive">
-<table class="table table-striped title1" >
+<table id="exportTable" class="table table-striped title1" >
 <tr style="color:red"><td><b>No</b></td><td><b>Name</b></td><td><b>Email</b></td><td><b>Answers</b></td><td><b>Add Marks</b></td></tr>';
 while($row=mysqli_fetch_array($qp) )
 {
@@ -276,23 +277,30 @@ $sn=$row['studentName'];
 $se=$row['studentEmail'];
 $ll=$row['FileLocation'];
 $ql=$row['questionId'];
-
+$mk=$row['marks'];
+if($mk==""){
+  $mk="Enter Marks";
+}else{
+  $mk=$mk;
+}
 $view2 = "dash.php?q=16&id=".$ql;
 
 $c++;
 echo '<tr><td style="color:#99cc32"><b>'.$c.'</b></td><td>'.$sn.'</td><td>'.$se.'</td>';
 echo '<td ><a title="View Files"  href="'.$view2.'" class="btn btn-info btn-xs" ><span class="fa fa-info fw-fa"></span> View</a></td>';
 echo '<td> <form action="controller.php?action=editmarks"  method="POST" enctype="multipart/form-data">
-<input class=" " id="marks" name="marks" placeholder="Enter Marks" type="text" value=""> 
+<input class=" " id="marks" name="marks" placeholder="'.$mk.'" type="text" value="'.$mk.'"> 
 <input name="flocation" id="flocation" type="hidden" type="text" value="'.$ll.'">
 <input name="fid" id="fid" type="hidden" type="text" value="'.$ql.'">
 <button class="btn btn-primary btn-sm" name="save3" type="submit" ><span class="fa fa-save fw-fa"></span>Add</button> 
  
   </form></td>';
+ 
 }
 echo '</table></div></div>';
 
 }
+
 ?>
 <!--view submitted answer-->
 <?php if(@$_GET['q']==16) {
