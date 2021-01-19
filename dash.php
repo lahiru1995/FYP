@@ -216,7 +216,7 @@ echo '<td > <a title="Edit Details" href="dash.php?q=8&id='.$lid.'"  class="btn 
  <a title="Delete" href="controller.php?action=delete&id='.$lid.'" class="btn btn-danger btn-xs" ><span class="fa fa-trash-o fw-fa"></span> Delete</a>
  </td>';
 
-echo '<td>';
+//echo '<td>';
 }
 echo '</table></div></div>';
 
@@ -225,7 +225,7 @@ echo ' <h3 align="center" >List of Question papers | Add <a href="dash.php?q=13"
 $qp=mysqli_query($con,"SELECT * FROM lesson where Category=''" )or die('Error223');
 echo  '<div class="panel title"><div class="table-responsive">
 <table class="table table-striped title1" >
-<tr style="color:red"><td><b>No</b></td><td><b>Chapter</b></td><td><b>Question Paper Title</b></td><td><b>Action</b></td><td><b>Answers</b></td></tr>';
+<tr style="color:red"><td><b>No</b></td><td><b>Chapter</b></td><td><b>Question Paper Title</b></td><td><b>Action</b></td><td><b>Answers</b></td><td><b>Publish Marks</b></td></tr>';
 $c=0;
 while($row=mysqli_fetch_array($qp) )
 {
@@ -251,9 +251,10 @@ echo '<td > <a title="Edit Details" href="dash.php?q=14&id='.$lid.'"  class="btn
  <a title="View Files"  href="'.$view.'" class="btn btn-info btn-xs" ><span class="fa fa-info fw-fa"></span> View</a>
  <a title="Delete" href="controller.php?action=delete&id='.$lid.'" class="btn btn-danger btn-xs" ><span class="fa fa-trash-o fw-fa"></span> Delete</a>
  </td>
- <td > <a title="Edit Details" href="dash.php?q=15&id='.$lid.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-edit fw-fa"></span>View Student Answers</a> </td>';
+ <td > <a title="Edit Details" href="dash.php?q=15&id='.$lid.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-edit fw-fa"></span>View Student Answers</a> </td>
+ <td><a title="Change File" href="dash.php?q=17&id='.$lid.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-upload fw-fa"></span>Publish Marks</a></td>';
 
-echo '<td>';
+//echo '<td>';
 }
 echo '</table></div></div>';
 }?>
@@ -278,6 +279,9 @@ $se=$row['studentEmail'];
 $ll=$row['FileLocation'];
 $ql=$row['questionId'];
 $mk=$row['marks'];
+$cp=$row['chapter'];
+$ct=$row['questionTitle'];
+
 if($mk==""){
   $mk="Enter Marks";
 }else{
@@ -286,6 +290,8 @@ if($mk==""){
 $view2 = "dash.php?q=16&id=".$ql;
 
 $c++;
+
+
 echo '<tr><td style="color:#99cc32"><b>'.$c.'</b></td><td>'.$sn.'</td><td>'.$se.'</td>';
 echo '<td ><a title="View Files"  href="'.$view2.'" class="btn btn-info btn-xs" ><span class="fa fa-info fw-fa"></span> View</a></td>';
 echo '<td> <form action="controller.php?action=editmarks"  method="POST" enctype="multipart/form-data">
@@ -294,10 +300,19 @@ echo '<td> <form action="controller.php?action=editmarks"  method="POST" enctype
 <input name="fid" id="fid" type="hidden" type="text" value="'.$ql.'">
 <button class="btn btn-primary btn-sm" name="save3" type="submit" ><span class="fa fa-save fw-fa"></span>Add</button> 
  
-  </form></td>';
+  </form></td>
+  
+  ';
  
 }
-echo '</table></div></div>';
+echo '</table></div>';
+echo '<form action="controller.php?action=pdf" method="POST">
+  <input name="fid" id="fid" type="hidden" type="text" value="'.$ql.'">   
+  <input name="chapter" id="chapter" type="hidden" type="text" value="'.$cp.'"> 
+  <input name="qtitle" id="qtitle" type="hidden" type="text" value="'.$ct.'"> 
+  <input type="submit" name="generate_pdf" class="btn btn-success" value="Generate PDF" />    
+</form> ';
+echo '</div>';
 
 }
 
@@ -739,6 +754,96 @@ echo '<form class="form-horizontal span6" action="controller.php?action=updatefi
          </div>
        </div> 
 </form> ';
+}
+?>
+
+<!--publish answers file start-->
+<?php if(@$_GET['q']==17) {
+  require_once ("include/initialize.php");
+@$id = $_GET['id'];
+ if($id==''){
+//redirect("index.php");
+}
+$lesson = New Lesson();
+$res = $lesson->single_lesson($id);
+$lc = $res->LessonChapter;
+$lid = $res->LessonID;
+$lt = $res->LessonTitle; 
+$fl = $res->FileLocation;
+$cc = $res->Category;
+$ml = $res->marksLocation;
+
+echo '<form class="form-horizontal span6" action="controller.php?action=publishmarks" method="POST" enctype="multipart/form-data">
+
+<div class="row">
+<div class="col-lg-12">
+ <h1 class="page-header">Publish Marks</h1>
+</div>
+<!-- /.col-lg-12 -->
+</div> 
+
+<div class="form-group">
+         <div class="col-md-11">
+           <label class="col-md-2 control-label" for=
+           "LessonChapter">Chapter:</label>
+
+           <div class="col-md-10">
+             <input name="LessonID" type="hidden" value="'.$lid.'">
+             <label class="control-label">'.$lc.'</label>
+           </div>
+         </div>
+       </div>
+           
+        <div class="form-group">
+         <div class="col-md-11">
+           <label class="col-md-2 control-label" for=
+           "LessonTitle">Title:</label>
+
+           <div class="col-md-10">
+             <input name="deptid" type="hidden" value="">
+             <label class="control-label">'.$lt.'</label>
+           </div>
+         </div>
+       </div>
+
+      
+
+
+  <div class="form-group">
+   <div class="col-md-11">
+     <label class="col-md-2" align = "right"for=
+     "file">Upload File:</label>
+
+     <div class="col-md-10"> 
+     <input type="file" name="file" value="'.$fl.'" />
+     </div>
+   </div>
+ </div>
+
+  <div class="form-group">
+         <div class="col-md-11">
+           <label class="col-md-2 control-label" for=
+           "idno"></label>
+
+           <div class="col-md-10">
+            <button class="btn btn-primary btn-sm" name="save" type="submit" ><span class="fa fa-save fw-fa"></span>  Save</button> 
+              </div>
+         </div>
+       </div> 
+</form> ';
+
+//$answer = new answer();
+//$res1 = $answer->single_answer($id, $email);
+//$ansfl = $res1->FileLocation;
+if($ml==""){
+  echo '<h2></h2>';
+}else{
+echo '<h2><?php echo '.$lt.' ; ?></h2>
+<p style="font-size: 18px;font-weight: bold;">Uploaded Marks File: </p>
+<div class="container">
+	<embed src="'.$ml.'" type="application/pdf" width="100%" height="600px" />
+</div>';}
+
 }
 ?>
 <!--view pdf start-->

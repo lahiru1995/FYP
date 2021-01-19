@@ -46,6 +46,9 @@ require_once(LIB_PATH.DS.'database.php');
 		$cur = $mydb->loadSingleResult();
 		return $cur;
 }
+	/*---Icreate pdf---*/
+
+	
 
 	 
 	/*---Instantiation of Object dynamically---*/

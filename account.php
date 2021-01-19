@@ -67,6 +67,7 @@ echo '<span class="pull-right top title1" ><span class="log1"><span class="glyph
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li <?php if(@$_GET['q']==1) echo'class="active"'; ?> ><a href="account.php?q=1"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Lesson<span class="sr-only">(current)</span></a></li>
+        <li <?php if(@$_GET['q']==5) echo'class="active"'; ?> ><a href="account.php?q=5"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;Paper Marks<span class="sr-only">(current)</span></a></li>
 			<li <?php if(@$_GET['q']==4) echo'class="active"'; ?>><a href="account.php?q=4"><span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;Quiz</a></li>		
 	    	<li <?php if(@$_GET['q']==2) echo'class="active"'; ?>><a href="account.php?q=2"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>&nbsp;History</a></li>
 	    	<li <?php if(@$_GET['q']==3) echo'class="active"'; ?>><a href="account.php?q=3"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;Ranking</a></li>
@@ -287,7 +288,7 @@ echo '<td >
 <a title="View Files"  href="'.$view.'" class="btn btn-info btn-xs" ><span class="fa fa-info fw-fa"></span> View</a>
  </td>';
 
-echo '<td>';
+//echo '<td>';
 }
 echo '</table></div></div>';
 
@@ -324,18 +325,61 @@ echo '<td >
 <a title="View Files"  href="'.$view.'" class="btn btn-info btn-xs" ><span class="fa fa-info fw-fa"></span> View</a>
  </td>';
 
-
  echo '<td >
  <!--<a href="'.$l.'" class="btn btn-primary btn-xs  " download><i class="fa fa-download"></i> Downlaod</a>-->
 <a title="View Files"  href="'.$view1.'" class="btn btn-info btn-xs" ><span class="fa fa-info fw-fa"></span> Submit Answer</a>
  </td>';
+ 
 
-echo '<td>';
+//echo '<td>';
+
+}
+echo '</table></div></div>';
+}
+
+//view paper marks start
+if(@$_GET['q']==5) {
+
+//question paper
+echo ' <h3 align="center" >Question paper Marks  </h3> ';
+
+$qpp=mysqli_query($con,"SELECT * FROM lesson where Category= '' AND marksLocation != ''" )or die('Error223');
+echo  '<div class="panel title"><div class="table-responsive">
+<table class="table table-striped title1" >
+<tr style="color:red"><td><b>No</b></td><td><b>Chapter</b></td><td><b>Question Title</b></td><td><b>Marks</b></td></tr>';
+$c=0;
+while($row=mysqli_fetch_array($qpp) )
+{
+$c1=$row['LessonChapter'];
+$t=$row['LessonTitle'];
+$l=$row['FileLocation'];
+$categ=$row['Category'];
+$lid=$row['LessonID'];
+$ml=$row['marksLocation'];
+
+$c++;
+echo '<tr><td style="color:#99cc32"><b>'.$c.'</b></td><td>'.$c1.'</td><td>'.$t.'</td>';
+
+if ($categ=="") {
+  # code...
+  $view = "account.php?q=14&id=".$lid;
+  $view1 = "account.php?q=14&id=".$lid;
+}else{
+  $view = "account.php?q=14&id=".$lid;
+
+}
+
+echo '<td > 
+<a href="'.$ml.'" class="btn btn-primary btn-xs  " download><i class="fa fa-download"></i> Downlaod</a>
+<a title="View Files"  href="'.$view.'" class="btn btn-info btn-xs" ><span class="fa fa-info fw-fa"></span> View</a>
+ </td>';
 
 }
 echo '</table></div></div>';
 }
 ?>
+
+
 <!-- answer upload -->
 <?php if(@$_GET['q']==13) {
   require_once ("include/initialize.php");
@@ -488,6 +532,32 @@ echo '<h2><?php echo '.$title.' ; ?></h2>
 <p style="font-size: 18px;font-weight: bold;">Chapter : '.$lc.' | Title : '.$lt.'</p>
 <div class="container">
 	<embed src="'.$fl.'" type="application/pdf" width="100%" height="600px" />
+</div>';
+}
+?>
+
+<!--account view marks file start-->
+<?php if(@$_GET['q']==14) {
+  require_once ("include/initialize.php");
+@$id = $_GET['id'];
+ if($id==''){
+//redirect("index.php");
+}
+$lesson = New Lesson();
+$res = $lesson->single_lesson($id);
+$lc = $res->LessonChapter;
+$lid = $res->LessonID;
+$lt = $res->LessonTitle; 
+$fl = $res->FileLocation;
+$cc = $res->Category;
+$ml = $res->marksLocation;
+
+$title = "view file";
+
+echo '<h2><?php echo '.$title.' ; ?></h2>
+<p style="font-size: 18px;font-weight: bold;">Chapter : '.$lc.' | Title : '.$lt.'</p>
+<div class="container">
+	<embed src="'.$ml.'" type="application/pdf" width="100%" height="600px" />
 </div>';
 }
 ?>
