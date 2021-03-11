@@ -1156,16 +1156,18 @@ echo '
 	margin:10px auto;
 	width:1000px;
 	text-align:center;
+	
 }
 
 .chathistory{
-	min-height:600px;
+	min-height:500px;
 	width:600px;
 	margin:10px auto;
 	padding:10px;
 	background:#f1f1f1;
 	text-align:left;
 	border: 1px solid #b3b3b3;
+	overflow: scroll;
 }
 
 
