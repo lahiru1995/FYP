@@ -13,7 +13,7 @@ min-height:540px;
 }
 .bg1
 {
-background:url(../image/bg.jpg);
+background:url(./image/bg.jpg);
 min-height:535px;
 }
 
@@ -59,7 +59,11 @@ position: absolute;
 
 }
 
+/*------------chat----------*/
 
+
+
+/*--------------end chat ----------*/
 .title1{
 font: 16px "FontAwesome", "Times Roman", sans-serif;
 }

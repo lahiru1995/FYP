@@ -10,10 +10,19 @@
  <link rel="stylesheet" href="css/main.css">
  <link  rel="stylesheet" href="css/font.css">
  <script src="js/jquery.js" type="text/javascript"></script>
+  <script src="js/main.js" type="text/javascript"></script>
 
+ <style><?php include 'css/main.css'; ?></style>
+ <style><?php include 'css/font.css'; ?></style>
  
   <script src="js/bootstrap.min.js"  type="text/javascript"></script>
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  
  <!--alert message-->
 <?php if(@$_GET['w'])
 {echo'<script>alert("'.@$_GET['w'].'");</script>';}
@@ -71,6 +80,7 @@ echo '<span class="pull-right top title1" ><span class="log1"><span class="glyph
 			<li <?php if(@$_GET['q']==4) echo'class="active"'; ?>><a href="account.php?q=4"><span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;Quiz</a></li>		
 	    	<li <?php if(@$_GET['q']==2) echo'class="active"'; ?>><a href="account.php?q=2"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>&nbsp;History</a></li>
 	    	<li <?php if(@$_GET['q']==3) echo'class="active"'; ?>><a href="account.php?q=3"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;Ranking</a></li>
+			<li <?php if(@$_GET['q']==15) echo'class="active"'; ?>><a href="account.php?q=15"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;Chat Room</a></li>
 			
 	    	<li class="pull-right"> <a href="logout.php?q=account.php"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;Signout</a></li>
 		</ul>
@@ -602,6 +612,110 @@ echo '
 }
 ?>
 
+<!--chat start-->
+<?php if(@$_GET['q']==15) {
+  require_once ("include/initialize.php");
+@$id = $_GET['id'];
+ if($id==''){
+//redirect("index.php");
+}
+
+$name = $_SESSION['name'];
+$_SESSION['user'] = $name;
+echo '
+<div class="centeralised">
+	
+	<div class="chathistory"></div>
+
+	<div class="chatbox">
+		
+		<form action="" method="POST">
+			
+			<textarea class="txtarea" id="message" name="message"></textarea>
+
+		</form>
+
+	</div>
+
+	</div>
+	
+	<style>
+	.centeralised{
+	margin:10px auto;
+	width:1000px;
+	text-align:center;
+}
+
+.chathistory{
+	min-height:600px;
+	width:600px;
+	margin:10px auto;
+	padding:10px;
+	background:#f1f1f1;
+	text-align:left;
+	border: 1px solid #b3b3b3;
+}
+
+
+.txtarea{
+	min-height:100px;
+	width:600px;
+	margin:10px auto;
+	padding:10px;
+}
+
+.siglemessage{
+	font-size:12px;
+	padding:5px;
+	border-bottom:1px solid #b3b3b3;
+}</style>';
+}
+?>
+
+<script>
+
+
+		$(document).ready(function(){
+			loadChat();
+		});
+
+
+		
+		$('#message').keyup(function(e){
+
+
+			var message = $(this).val();
+
+			if( e.which == 13 ){
+
+				$.post('handlers/ajax.php?action=SendMessage&message='+message, function(response){
+					
+					loadChat();
+					$('#message').val('');
+
+				});
+
+			}
+
+		});
+
+
+
+		function loadChat()
+		{
+			$.post('handlers/ajax.php?action=getChat', function(response){
+				
+				$('.chathistory').html(response);
+
+			});
+		}
+
+
+		setInterval(function(){
+			loadChat();
+		}, 2000);
+
+	</script>
 
 </div></div></div></div>
 <!--Footer start-->

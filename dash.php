@@ -13,6 +13,11 @@
 
   <script src="js/bootstrap.min.js"  type="text/javascript"></script>
  	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+	
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
 
 
 <script>
@@ -84,6 +89,7 @@ echo '<span class="pull-right top title1" ><span class="log1"><span class="glyph
 			
           </ul>
           <li <?php if(@$_GET['q']==6) echo'class="active"'; ?>><a href="dash.php?q=6">Lesson</a></li>
+		  <li <?php if(@$_GET['q']==18) echo'class="active"'; ?>><a href="dash.php?q=18">Chat Room</a></li>
         </li><li class="pull-right"> <a href="logout.php?q=account.php"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;Signout</a></li>
 		
       </ul>
@@ -1117,6 +1123,111 @@ echo '</table></div></div>';
 }
 ?>
 
+
+<!--chat start-->
+<?php if(@$_GET['q']==18) {
+  require_once ("include/initialize.php");
+@$id = $_GET['id'];
+ if($id==''){
+//redirect("index.php");
+}
+
+$name = $_SESSION['name'];
+$_SESSION['user'] = $name;
+echo '
+<div class="centeralised">
+	
+	<div class="chathistory"></div>
+
+	<div class="chatbox">
+		
+		<form action="" method="POST">
+			
+			<textarea class="txtarea" id="message" name="message"></textarea>
+
+		</form>
+
+	</div>
+
+	</div>
+	
+	<style>
+	.centeralised{
+	margin:10px auto;
+	width:1000px;
+	text-align:center;
+}
+
+.chathistory{
+	min-height:600px;
+	width:600px;
+	margin:10px auto;
+	padding:10px;
+	background:#f1f1f1;
+	text-align:left;
+	border: 1px solid #b3b3b3;
+}
+
+
+.txtarea{
+	min-height:100px;
+	width:600px;
+	margin:10px auto;
+	padding:10px;
+}
+
+.siglemessage{
+	font-size:12px;
+	padding:5px;
+	border-bottom:1px solid #b3b3b3;
+}</style>';
+}
+?>
+
+<script>
+
+
+		$(document).ready(function(){
+			loadChat();
+		});
+
+
+		
+		$('#message').keyup(function(e){
+
+
+			var message = $(this).val();
+
+			if( e.which == 13 ){
+
+				$.post('handlers/ajax.php?action=SendMessage&message='+message, function(response){
+					
+					loadChat();
+					$('#message').val('');
+
+				});
+
+			}
+
+		});
+
+
+
+		function loadChat()
+		{
+			$.post('handlers/ajax.php?action=getChat', function(response){
+				
+				$('.chathistory').html(response);
+
+			});
+		}
+
+
+		setInterval(function(){
+			loadChat();
+		}, 2000);
+
+	</script>
 
 </div><!--container closed-->
 </div></div>
