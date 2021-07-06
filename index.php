@@ -113,12 +113,43 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
 
 <!-- Text input-->
 <div class="form-group">
+  <label class="col-md-12 control-label" for="name"></label>
+  <div class="col-md-12">
+    <select id="college" name="college" placeholder="Enter your class" class="form-control input-md" >
+   <option value="Male">Select your Grade</option>
+  <option value="1">Grade 1</option>
+  <option value="2">Grade 2</option> 
+  <option value="3">Grade 3</option>
+  <option value="4">Grade 4</option>
+  <option value="5">Grade 5</option>
+  <option value="6">Grade 6</option>
+  <option value="7">Grade 7</option>
+  <option value="8">Grade 8</option>
+  <option value="9">Grade 9</option>
+  <option value="10">Grade 10</option>
+  <option value="11">Grade 11</option>
+  <option value="112">Grade 12-Math</option>
+  <option value="212">Grade 12-Bio</option>
+  <option value="312">Grade 12-Commerce</option>
+  <option value="512">Grade 12-Tech</option>
+  <option value="412">Grade 12-Art</option>
+  <option value="113">Grade 13-Math</option>
+  <option value="213">Grade 13-Bio</option>
+  <option value="313">Grade 13-Commerce</option>
+  <option value="513">Grade 13-Tech</option>
+  <option value="413">Grade 13-Art</option>
+  
+  </select>
+  </div>
+</div>
+<!-- Text input
+<div class="form-group">
   <label class="col-md-12 control-label" for="name"></label>  
   <div class="col-md-12">
   <input id="college" name="college" placeholder="Enter your college name" class="form-control input-md" type="text">
     
   </div>
-</div>
+</div>-->
 
 
 <!-- Text input-->
@@ -177,12 +208,12 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
 <!--Footer start-->
 <div class="row footer">
 <div class="col-md-3 box">
-<a href="aboutus.php" target="_blank">About us</a>
+<a href="aboutus.php" target="_blank">Parents Login</a>
 </div>
 <div class="col-md-3 box">
-<a href="#" data-toggle="modal" data-target="#login">Admin Login</a></div>
+<a href="#" data-toggle="modal" data-target="#login">Teachers Login</a></div>
 <div class="col-md-3 box">
-<a href="#" data-toggle="modal" data-target="#developers">Developers</a>
+<a href="#" data-toggle="modal" data-target="#developers">Admin Login</a>
 </div>
 <div class="col-md-3 box">
 <a href="feedback.php" target="_blank">Feedback</a></div></div>

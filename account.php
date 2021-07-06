@@ -58,6 +58,11 @@ echo '<span class="pull-right top title1" ><span class="log1"><span class="glyph
 </div></div>
 <div class="bg">
 
+<?php 
+$class=@$_GET['c'];
+$subject=@$_GET['s'];
+?>
+
 <!--navigation menu-->
 <nav class="navbar navbar-default title1">
   <div class="container-fluid">
@@ -69,18 +74,20 @@ echo '<span class="pull-right top title1" ><span class="log1"><span class="glyph
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><b>**</b></a>
+      <a class="navbar-brand" href="home.php"><b>All Grade</b></a>
+      <a class="navbar-brand" <?php echo'href="class01.php?q='.$class.'"'; ?> ><b>All Subject</b></a>
     </div>
-
+    
+  
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li <?php if(@$_GET['q']==1) echo'class="active"'; ?> ><a href="account.php?q=1"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Lesson<span class="sr-only">(current)</span></a></li>
-        <li <?php if(@$_GET['q']==5) echo'class="active"'; ?> ><a href="account.php?q=5"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;Paper Marks<span class="sr-only">(current)</span></a></li>
-			<li <?php if(@$_GET['q']==4) echo'class="active"'; ?>><a href="account.php?q=4"><span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;Quiz</a></li>		
-	    	<li <?php if(@$_GET['q']==2) echo'class="active"'; ?>><a href="account.php?q=2"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>&nbsp;History</a></li>
-	    	<li <?php if(@$_GET['q']==3) echo'class="active"'; ?>><a href="account.php?q=3"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;Ranking</a></li>
-			<li <?php if(@$_GET['q']==15) echo'class="active"'; ?>><a href="account.php?q=15"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;Chat Room</a></li>
+        <li <?php if(@$_GET['q']==01) echo'class="active"'; ?> ><a <?php echo'href="account.php?q=01&c='.$class.'&s='.$subject.'"'; ?> ><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Lesson<span class="sr-only">(current)</span></a></li>
+        <li <?php if(@$_GET['q']==5) echo'class="active"'; ?> ><a <?php echo'href="account.php?q=5&c='.$class.'&s='.$subject.'"'; ?> ><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;Paper Marks<span class="sr-only">(current)</span></a></li>
+			<li <?php if(@$_GET['q']==4) echo'class="active"'; ?>><a <?php echo'href="account.php?q=4&c='.$class.'&s='.$subject.'"'; ?> ><span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;Quiz</a></li>		
+	    	<li <?php if(@$_GET['q']==2) echo'class="active"'; ?>><a <?php echo'href="account.php?q=2&c='.$class.'&s='.$subject.'"'; ?> ><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>&nbsp;History</a></li>
+	    	<li <?php if(@$_GET['q']==3) echo'class="active"'; ?>><a <?php echo'href="account.php?q=3&c='.$class.'&s='.$subject.'"'; ?> ><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;Ranking</a></li>
+			<li <?php if(@$_GET['q']==15) echo'class="active"'; ?>><a <?php echo'href="account.php?q=15&c='.$class.'&s='.$subject.'"'; ?> ><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>&nbsp;Chat Room</a></li>
 			
 	    	<li class="pull-right"> <a href="logout.php?q=account.php"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;Signout</a></li>
 		</ul>
@@ -99,8 +106,10 @@ echo '<span class="pull-right top title1" ><span class="log1"><span class="glyph
 
 <!--home start-->
 <?php if(@$_GET['q']==4) {
+$class=@$_GET['c'];
+$subject=@$_GET['s'];
 
-$result = mysqli_query($con,"SELECT * FROM quiz ORDER BY date DESC") or die('Error');
+$result = mysqli_query($con,"SELECT * FROM quiz WHERE grade='$class' AND subject='$subject' ORDER BY date DESC") or die('Error');
 echo  '<div class="panel"><div class="table-responsive"><table class="table table-striped title1">
 <tr><td><b>S.N.</b></td><td><b>Topic</b></td><td><b>Total question</b></td><td><b>Marks</b></td><td><b>Time limit</b></td><td></td></tr>';
 $c=1;
@@ -114,12 +123,12 @@ $q12=mysqli_query($con,"SELECT score FROM history WHERE eid='$eid' AND email='$e
 $rowcount=mysqli_num_rows($q12);	
 if($rowcount == 0){
 	echo '<tr><td>'.$c++.'</td><td>'.$title.'</td><td>'.$total.'</td><td>'.$sahi*$total.'</td><td>'.$time.'&nbsp;min</td>
-	<td><b><a href="account.php?q=quiz&step=2&eid='.$eid.'&n=1&t='.$total.'" class="pull-right btn sub1" style="margin:0px;background:#99cc32"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>&nbsp;<span class="title1"><b>Start</b></span></a></b></td></tr>';
+	<td><b><a href="account.php?q=quiz&step=2&eid='.$eid.'&n=1&t='.$total.'&c='.$class.'&s='.$subject.'" class="pull-right btn sub1" style="margin:0px;background:#99cc32"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>&nbsp;<span class="title1"><b>Start</b></span></a></b></td></tr>';
 }
 else
 {
 echo '<tr style="color:#99cc32"><td>'.$c++.'</td><td>'.$title.'&nbsp;<span title="This quiz is already solve by you" class="glyphicon glyphicon-ok" aria-hidden="true"></span></td><td>'.$total.'</td><td>'.$sahi*$total.'</td><td>'.$time.'&nbsp;min</td>
-	<td><b><a href="update.php?q=quizre&step=25&eid='.$eid.'&n=1&t='.$total.'" class="pull-right btn sub1" style="margin:0px;background:red"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>&nbsp;<span class="title1"><b>Restart</b></span></a></b></td></tr>';
+	<td><b><a href="update.php?q=quizre&step=25&eid='.$eid.'&n=1&t='.$total.'&c='.$class.'&s='.$subject.'" class="pull-right btn sub1" style="margin:0px;background:red"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>&nbsp;<span class="title1"><b>Restart</b></span></a></b></td></tr>';
 }
 }
 $c=0;
@@ -163,7 +172,7 @@ $qid=$row['qid'];
 echo '<b>Question &nbsp;'.$sn.'&nbsp;::<br />'.$qns.'</b><br /><br />';
 }
 $q=mysqli_query($con,"SELECT * FROM options WHERE qid='$qid' " );
-echo '<form action="update.php?q=quiz&step=2&eid='.$eid.'&n='.$sn.'&t='.$total.'&qid='.$qid.'" method="POST"  class="form-horizontal">
+echo '<form action="update.php?q=quiz&step=2&eid='.$eid.'&n='.$sn.'&t='.$total.'&qid='.$qid.'&c='.$class.'&s='.$subject.'" method="POST"  class="form-horizontal">
 <br />';
 
 while($row=mysqli_fetch_array($q) )
@@ -235,7 +244,7 @@ echo'</table></div>';
 //ranking start
 if(@$_GET['q']== 3) 
 {
-$q=mysqli_query($con,"SELECT * FROM rank  ORDER BY score DESC " )or die('Error223');
+$q=mysqli_query($con,"SELECT * FROM rank WHERE grade='$class' AND subject='$subject' ORDER BY score DESC " )or die('Error223');
 echo  '<div class="panel title"><div class="table-responsive">
 <table class="table table-striped title1" >
 <tr style="color:red"><td><b>Rank</b></td><td><b>Name</b></td><td><b>Gender</b></td><td><b>College</b></td><td><b>Score</b></td></tr>';
@@ -255,15 +264,18 @@ $c++;
 echo '<tr><td style="color:#99cc32"><b>'.$c.'</b></td><td>'.$name.'</td><td>'.$gender.'</td><td>'.$college.'</td><td>'.$s.'</td><td>';
 }
 echo '</table></div></div>';}
-
-
+?>
+<?php
 //lesson start
 //<!--lesson start-->
-if(@$_GET['q']==1) {
+if(@$_GET['q']==01) {
 
-  echo ' <h3 align="center" >List of Lessons  </h3> ';
+    $class=@$_GET['c'];
+    $subject=@$_GET['s'];
 
-$q=mysqli_query($con,"SELECT * FROM lesson where Category= 'Docs' OR Category= 'Video'" )or die('Error223');
+  echo ' <h3 align="center" >List of Lessons </h3> ';
+
+$q=mysqli_query($con,"SELECT * FROM lesson WHERE grade='$class' AND subject='$subject' AND (Category= 'Docs' OR Category= 'Video')" )or die('Error223');
 echo  '<div class="panel title"><div class="table-responsive">
 <table class="table table-striped title1" >
 <tr style="color:red"><td><b>No</b></td><td><b>Chapter</b></td><td><b>Title</b></td><td><b>File Type</b></td><td><b>Action</b></td></tr>';
@@ -287,9 +299,9 @@ echo '<tr><td style="color:#99cc32"><b>'.$c.'</b></td><td>'.$c1.'</td><td>'.$t.'
 
 if ($categ=="Video") {
   # code...
-  $view = "account.php?q=12&id=".$lid;
+  $view = "account.php?q=12&id=".$lid."&c=".$class."&s=".$subject;
 }else{
-  $view = "account.php?q=11&id=".$lid;
+  $view = "account.php?q=11&id=".$lid."&c=".$class."&s=".$subject;
 
 }
 
@@ -305,7 +317,7 @@ echo '</table></div></div>';
 //question paper
 echo ' <h3 align="center" >List of Question papers  </h3> ';
 
-$qpp=mysqli_query($con,"SELECT * FROM lesson where Category= ''" )or die('Error223');
+$qpp=mysqli_query($con,"SELECT * FROM lesson where Category= '' AND grade='$class' AND subject='$subject'" )or die('Error223');
 echo  '<div class="panel title"><div class="table-responsive">
 <table class="table table-striped title1" >
 <tr style="color:red"><td><b>No</b></td><td><b>Chapter</b></td><td><b>Question Title</b></td><td><b>Action</b></td><td><b>Submit Answer</b></td></tr>';
@@ -323,10 +335,10 @@ echo '<tr><td style="color:#99cc32"><b>'.$c.'</b></td><td>'.$c1.'</td><td>'.$t.'
 
 if ($categ=="") {
   # code...
-  $view = "account.php?q=11&id=".$lid;
-  $view1 = "account.php?q=13&id=".$lid;
+  $view = "account.php?q=11&id=".$lid."&c=".$class."&s=".$subject;
+  $view1 = "account.php?q=13&id=".$lid."&c=".$class."&s=".$subject;
 }else{
-  $view = "account.php?q=11&id=".$lid;
+  $view = "account.php?q=11&id=".$lid."&c=".$class."&s=".$subject;
 
 }
 
@@ -346,14 +358,16 @@ echo '<td >
 }
 echo '</table></div></div>';
 }
-
+?>
+<?php
 //view paper marks start
 if(@$_GET['q']==5) {
-
+  $class=@$_GET['c'];
+  $subject=@$_GET['s'];
 //question paper
 echo ' <h3 align="center" >Question paper Marks  </h3> ';
 
-$qpp=mysqli_query($con,"SELECT * FROM lesson where Category= '' AND marksLocation != ''" )or die('Error223');
+$qpp=mysqli_query($con,"SELECT * FROM lesson where Category= '' AND marksLocation != '' AND grade='$class' AND subject='$subject'" )or die('Error223');
 echo  '<div class="panel title"><div class="table-responsive">
 <table class="table table-striped title1" >
 <tr style="color:red"><td><b>No</b></td><td><b>Chapter</b></td><td><b>Question Title</b></td><td><b>Marks</b></td></tr>';
@@ -372,10 +386,10 @@ echo '<tr><td style="color:#99cc32"><b>'.$c.'</b></td><td>'.$c1.'</td><td>'.$t.'
 
 if ($categ=="") {
   # code...
-  $view = "account.php?q=14&id=".$lid;
-  $view1 = "account.php?q=14&id=".$lid;
+  $view = "account.php?q=14&id=".$lid."&c=".$class."&s=".$subject;
+  $view1 = "account.php?q=14&id=".$lid."&c=".$class."&s=".$subject;
 }else{
-  $view = "account.php?q=14&id=".$lid;
+  $view = "account.php?q=14&id=".$lid."&c=".$class."&s=".$subject;
 
 }
 
@@ -394,6 +408,9 @@ echo '</table></div></div>';
 <?php if(@$_GET['q']==13) {
   require_once ("include/initialize.php");
 @$id = $_GET['id'];
+$class=@$_GET['c'];
+$subject=@$_GET['s'];
+
  if($id==''){
 //redirect("index.php");
 }
@@ -411,7 +428,7 @@ $cc = $res->Category;
 $title = "view file";
 
 
-echo '<form class="form-horizontal span6" action="controller.php?action=addans" method="POST" enctype="multipart/form-data">
+echo '<form class="form-horizontal span6" action="controller.php?action=addans&c='.$class.'&s='.$subject.'" method="POST" enctype="multipart/form-data">
 
 <div class="row">
 <div class="col-lg-12">
@@ -616,6 +633,9 @@ echo '
 <?php if(@$_GET['q']==15) {
   require_once ("include/initialize.php");
 @$id = $_GET['id'];
+$class1=@$_GET['c'];
+$subject1=@$_GET['s'];
+
  if($id==''){
 //redirect("index.php");
 }
@@ -674,7 +694,8 @@ echo '
 ?>
 
 <script>
-
+var s = "<?php echo $subject1; ?>";
+var c = "<?php echo $class1; ?>";
 
 		$(document).ready(function(){
 			loadChat();
@@ -689,7 +710,7 @@ echo '
 
 			if( e.which == 13 ){
 
-				$.post('handlers/ajax.php?action=SendMessage&message='+message, function(response){
+				$.post('handlers/ajax.php?action=SendMessage&message='+message+'&c='+c+'&s='+s, function(response){
 					
 					loadChat();
 					$('#message').val('');
@@ -704,7 +725,7 @@ echo '
 
 		function loadChat()
 		{
-			$.post('handlers/ajax.php?action=getChat', function(response){
+			$.post('handlers/ajax.php?action=getChat&c='+c+'&s='+s, function(response){
 				
 				$('.chathistory').html(response);
 

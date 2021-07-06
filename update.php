@@ -25,6 +25,8 @@ header("location:dash.php?q=1");
 if(isset($_SESSION['key'])){
 if(@$_GET['q']== 'rmquiz' && $_SESSION['key']=='sunny7785068889') {
 $eid=@$_GET['eid'];
+$class=@$_GET['c'];
+$subject=@$_GET['s'];
 $result = mysqli_query($con,"SELECT * FROM questions WHERE eid='$eid' ") or die('Error');
 while($row = mysqli_fetch_array($result)) {
 	$qid = $row['qid'];
@@ -35,13 +37,16 @@ $r3 = mysqli_query($con,"DELETE FROM questions WHERE eid='$eid' ") or die('Error
 $r4 = mysqli_query($con,"DELETE FROM quiz WHERE eid='$eid' ") or die('Error');
 $r4 = mysqli_query($con,"DELETE FROM history WHERE eid='$eid' ") or die('Error');
 
-header("location:dash.php?q=5");
+header("location:dash.php?q=5&c=$class&s=$subject");
 }
 }
 
 //add quiz
 if(isset($_SESSION['key'])){
 if(@$_GET['q']== 'addquiz' && $_SESSION['key']=='sunny7785068889') {
+  $class=@$_GET['c'];
+$subject=@$_GET['s'];
+
 $name = $_POST['name'];
 $name= ucwords(strtolower($name));
 $total = $_POST['total'];
@@ -51,9 +56,9 @@ $time = $_POST['time'];
 $tag = $_POST['tag'];
 $desc = $_POST['desc'];
 $id=uniqid();
-$q3=mysqli_query($con,"INSERT INTO quiz VALUES  ('$id','$name' , '$sahi' , '$wrong','$total','$time' ,'$desc','$tag', NOW())");
+$q3=mysqli_query($con,"INSERT INTO quiz VALUES  ('$id','$name' , '$sahi' , '$wrong','$total','$time' ,'$desc','$tag', NOW(), '$class', '$subject')");
 
-header("location:dash.php?q=4&step=2&eid=$id&n=$total");
+header("location:dash.php?q=4&step=2&eid=$id&n=$total&c=$class&s=$subject");
 }
 }
 
@@ -63,12 +68,14 @@ if(@$_GET['q']== 'addqns' && $_SESSION['key']=='sunny7785068889') {
 $n=@$_GET['n'];
 $eid=@$_GET['eid'];
 $ch=@$_GET['ch'];
+$class=@$_GET['c'];
+$subject=@$_GET['s'];
 
 for($i=1;$i<=$n;$i++)
  {
  $qid=uniqid();
  $qns=$_POST['qns'.$i];
-$q3=mysqli_query($con,"INSERT INTO questions VALUES  ('$eid','$qid','$qns' , '$ch' , '$i')");
+$q3=mysqli_query($con,"INSERT INTO questions VALUES  ('$eid','$qid','$qns' , '$ch' , '$i', '$class', '$subject')");
   $oaid=uniqid();
   $obid=uniqid();
 $ocid=uniqid();
@@ -104,7 +111,7 @@ $ansid=$oaid;
 $qans=mysqli_query($con,"INSERT INTO answer VALUES  ('$qid','$ansid')");
 
  }
-header("location:dash.php?q=0");
+header("location:dash.php?q=0&c=$class&s=$subject");
 }
 }
 
@@ -115,6 +122,8 @@ $sn=@$_GET['n'];
 $total=@$_GET['t'];
 $ans=$_POST['ans'];
 $qid=@$_GET['qid'];
+$class=@$_GET['c'];
+$subject=@$_GET['s'];
 $q=mysqli_query($con,"SELECT * FROM answer WHERE qid='$qid' " );
 while($row=mysqli_fetch_array($q) )
 {
@@ -181,7 +190,7 @@ $q=mysqli_query($con,"SELECT * FROM rank WHERE email='$email'" )or die('Error161
 $rowcount=mysqli_num_rows($q);
 if($rowcount == 0)
 {
-$q2=mysqli_query($con,"INSERT INTO rank VALUES('$email','$s',NOW())")or die('Error165');
+$q2=mysqli_query($con,"INSERT INTO rank VALUES('$email','$s',NOW(),'$class','$subject')")or die('Error165');
 }
 else
 {
@@ -190,13 +199,13 @@ while($row=mysqli_fetch_array($q) )
 $sun=$row['score'];
 }
 $sun=$s+$sun;
-$q=mysqli_query($con,"UPDATE `rank` SET `score`=$sun ,time=NOW() WHERE email= '$email'")or die('Error174');
+$q=mysqli_query($con,"UPDATE `rank` SET `score`=$sun ,time=NOW(), grade='$class', subject='$subject' WHERE email= '$email'")or die('Error174');
 }
-header("location:account.php?q=result&eid=$eid");
+header("location:account.php?q=result&eid=$eid&c=$class&s=$subject");
 }
 else
 {
-header("location:account.php?q=result&eid=$eid");
+header("location:account.php?q=result&eid=$eid&c=$class&s=$subject");
 }
 }
 
@@ -205,6 +214,8 @@ if(@$_GET['q']== 'quizre' && @$_GET['step']== 25 ) {
 $eid=@$_GET['eid'];
 $n=@$_GET['n'];
 $t=@$_GET['t'];
+$class=@$_GET['c'];
+$subject=@$_GET['s'];
 $q=mysqli_query($con,"SELECT score FROM history WHERE eid='$eid' AND email='$email'" )or die('Error156');
 while($row=mysqli_fetch_array($q) )
 {
@@ -217,8 +228,8 @@ while($row=mysqli_fetch_array($q) )
 $sun=$row['score'];
 }
 $sun=$sun-$s;
-$q=mysqli_query($con,"UPDATE `rank` SET `score`=$sun ,time=NOW() WHERE email= '$email'")or die('Error174');
-header("location:account.php?q=quiz&step=2&eid=$eid&n=1&t=$t");
+$q=mysqli_query($con,"UPDATE `rank` SET `score`=$sun ,time=NOW(), grade='$class', subject='$subject' WHERE email= '$email'")or die('Error174');
+header("location:account.php?q=quiz&step=2&eid=$eid&n=1&t=$t&c=$class&s=$subject");
 }
 
 ?>

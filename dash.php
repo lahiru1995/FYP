@@ -58,6 +58,10 @@ include_once 'dbConnection.php';
 echo '<span class="pull-right top title1" ><span class="log1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;Hello,</span> <a href="account.php" class="log log1">'.$name.'</a>&nbsp;|&nbsp;<a href="logout.php?q=account.php" class="log"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;Signout</button></a></span>';
 }?>
 
+<?php 
+$class=@$_GET['c'];
+$subject=@$_GET['s'];
+?>
 </div></div>
 <!-- admin start-->
 
@@ -72,24 +76,25 @@ echo '<span class="pull-right top title1" ><span class="log1"><span class="glyph
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="dash.php?q=0"><b>Dashboard</b></a>
+      <a class="navbar-brand" href="homet.php"><b>All Grade</b></a>
+      <a class="navbar-brand" <?php echo'href="classt.php?q='.$class.'"'; ?>><b>All subject</b></a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li <?php if(@$_GET['q']==0) echo'class="active"'; ?>><a href="dash.php?q=0">Home<span class="sr-only">(current)</span></a></li>
-        <li <?php if(@$_GET['q']==1) echo'class="active"'; ?>><a href="dash.php?q=1">User</a></li>
-		<li <?php if(@$_GET['q']==2) echo'class="active"'; ?>><a href="dash.php?q=2">Ranking</a></li>
-		<li <?php if(@$_GET['q']==3) echo'class="active"'; ?>><a href="dash.php?q=3">Feedback</a></li>
+        <li <?php if(@$_GET['q']==0) echo'class="active"'; ?>><a <?php echo'href="dash.php?q=0&c='.$class.'&s='.$subject.'"'; ?> >Home<span class="sr-only">(current)</span></a></li>
+        <li <?php if(@$_GET['q']==1) echo'class="active"'; ?>><a <?php echo'href="dash.php?q=1&c='.$class.'&s='.$subject.'"'; ?> >User</a></li>
+		<li <?php if(@$_GET['q']==2) echo'class="active"'; ?>><a <?php echo'href="dash.php?q=2&c='.$class.'&s='.$subject.'"'; ?> >Ranking</a></li>
+		<li <?php if(@$_GET['q']==3) echo'class="active"'; ?>><a <?php echo'href="dash.php?q=3&c='.$class.'&s='.$subject.'"'; ?> >Feedback</a></li>
         <li class="dropdown <?php if(@$_GET['q']==4 || @$_GET['q']==5) echo'active"'; ?>">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quiz<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="dash.php?q=4">Add Quiz</a></li>
-            <li><a href="dash.php?q=5">Remove Quiz</a></li>
+            <li><a <?php echo'href="dash.php?q=4&c='.$class.'&s='.$subject.'"'; ?>>Add Quiz</a></li>
+            <li><a <?php echo'href="dash.php?q=5&c='.$class.'&s='.$subject.'"'; ?>>Remove Quiz</a></li>
 			
           </ul>
-          <li <?php if(@$_GET['q']==6) echo'class="active"'; ?>><a href="dash.php?q=6">Lesson</a></li>
-		  <li <?php if(@$_GET['q']==18) echo'class="active"'; ?>><a href="dash.php?q=18">Chat Room</a></li>
+          <li <?php if(@$_GET['q']==6) echo'class="active"'; ?>><a <?php echo'href="dash.php?q=6&c='.$class.'&s='.$subject.'"'; ?>>Lesson</a></li>
+		  <li <?php if(@$_GET['q']==18) echo'class="active"'; ?>><a <?php echo'href="dash.php?q=18&c='.$class.'&s='.$subject.'"'; ?>>Chat Room</a></li>
         </li><li class="pull-right"> <a href="logout.php?q=account.php"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;Signout</a></li>
 		
       </ul>
@@ -104,7 +109,10 @@ echo '<span class="pull-right top title1" ><span class="log1"><span class="glyph
 
 <?php if(@$_GET['q']==0) {
 
-$result = mysqli_query($con,"SELECT * FROM quiz ORDER BY date DESC") or die('Error');
+$class=@$_GET['c'];
+$subject=@$_GET['s'];
+
+$result = mysqli_query($con,"SELECT * FROM quiz WHERE grade='$class' AND subject='$subject' ORDER BY date DESC") or die('Error');
 echo  '<div class="panel"><div class="table-responsive"><table class="table table-striped title1">
 <tr><td><b>S.N.</b></td><td><b>Topic</b></td><td><b>Total question</b></td><td><b>Marks</b></td><td><b>Time limit</b></td><td></td></tr>';
 $c=1;
@@ -134,7 +142,7 @@ echo '</table></div></div>';
 //ranking start
 if(@$_GET['q']== 2) 
 {
-$q=mysqli_query($con,"SELECT * FROM rank  ORDER BY score DESC " )or die('Error223');
+$q=mysqli_query($con,"SELECT * FROM rank WHERE grade='$class' AND subject='$subject' ORDER BY score DESC " )or die('Error223');
 echo  '<div class="panel title"><div class="table-responsive">
 <table class="table table-striped title1" >
 <tr style="color:red"><td><b>Rank</b></td><td><b>Name</b></td><td><b>Gender</b></td><td><b>College</b></td><td><b>Score</b></td></tr>';
@@ -162,18 +170,21 @@ echo '</table></div></div>';}
 <!--users start-->
 <?php if(@$_GET['q']==1) {
 
-$result = mysqli_query($con,"SELECT * FROM user") or die('Error');
+$class=@$_GET['c'];
+//$subject=@$_GET['s'];
+
+$result = mysqli_query($con,"SELECT * FROM user WHERE college='$class'") or die('Error');
 echo  '<div class="panel"><div class="table-responsive"><table class="table table-striped title1">
-<tr><td><b>S.N.</b></td><td><b>Name</b></td><td><b>Gender</b></td><td><b>College</b></td><td><b>Email</b></td><td><b>Mobile</b></td><td></td></tr>';
+<tr><td><b>S.N.</b></td><td><b>Name</b></td><td><b>Gender</b></td><td><b>Email</b></td><td><b>Mobile</b></td><td></td></tr>';
 $c=1;
 while($row = mysqli_fetch_array($result)) {
 	$name = $row['name'];
 	$mob = $row['mob'];
 	$gender = $row['gender'];
-    $email = $row['email'];
+  $email = $row['email'];
 	$college = $row['college'];
 
-	echo '<tr><td>'.$c++.'</td><td>'.$name.'</td><td>'.$gender.'</td><td>'.$college.'</td><td>'.$email.'</td><td>'.$mob.'</td>
+	echo '<tr><td>'.$c++.'</td><td>'.$name.'</td><td>'.$gender.'</td><td>'.$email.'</td><td>'.$mob.'</td>
 	<td><a title="Delete User" href="update.php?demail='.$email.'"><b><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></b></a></td></tr>';
 }
 $c=0;
@@ -184,9 +195,12 @@ echo '</table></div></div>';
 <!--lesson start-->
 <?php if(@$_GET['q']==6) {
 
-  echo ' <h3 align="center" >List of Lessons | Add <a href="dash.php?q=7" class="btn btn-primary">  <i class="fa fa-plus-circle fw-fa"></i> New</a></h3> ';
+$class=@$_GET['c'];
+$subject=@$_GET['s'];
 
-$q=mysqli_query($con,"SELECT * FROM lesson where Category= 'Docs' OR Category= 'Video'" )or die('Error223');
+  echo ' <h3 align="center" >List of Lessons | Add <a href="dash.php?q=7&c='.$class.'&s='.$subject.'" class="btn btn-primary">  <i class="fa fa-plus-circle fw-fa"></i> New</a></h3> ';
+
+$q=mysqli_query($con,"SELECT * FROM lesson where grade='$class' AND `subject`='$subject' AND (Category= 'Docs' OR Category= 'Video')" )or die('Error223');
 echo  '<div class="panel title"><div class="table-responsive">
 <table class="table table-striped title1" >
 <tr style="color:red"><td><b>No</b></td><td><b>Chapter</b></td><td><b>Title</b></td><td><b>File Type</b></td><td><b>Action</b></td></tr>';
@@ -210,16 +224,16 @@ echo '<tr><td style="color:#99cc32"><b>'.$c.'</b></td><td>'.$c1.'</td><td>'.$t.'
 
 if ($categ=="Video") {
   # code...
-  $view = "dash.php?q=11&id=".$lid;
+  $view = "dash.php?q=11&id=".$lid."&c=".$class."&s=".$subject;
 }else{
-  $view = "dash.php?q=10&id=".$lid;
+  $view = "dash.php?q=10&id=".$lid."&c=".$class."&s=".$subject;
 
 }
 
-echo '<td > <a title="Edit Details" href="dash.php?q=8&id='.$lid.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-edit fw-fa"></span> Edit</a> 
-<a title="Change File" href="dash.php?q=9&id='.$lid.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-upload fw-fa"></span> Change File</a> 
+echo '<td > <a title="Edit Details" href="dash.php?q=8&id='.$lid.'&c='.$class.'&s='.$subject.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-edit fw-fa"></span> Edit</a> 
+<a title="Change File" href="dash.php?q=9&id='.$lid.'&c='.$class.'&s='.$subject.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-upload fw-fa"></span> Change File</a> 
  <a title="View Files"  href="'.$view.'" class="btn btn-info btn-xs" ><span class="fa fa-info fw-fa"></span> View</a>
- <a title="Delete" href="controller.php?action=delete&id='.$lid.'" class="btn btn-danger btn-xs" ><span class="fa fa-trash-o fw-fa"></span> Delete</a>
+ <a title="Delete" href="controller.php?action=delete&id='.$lid.'&c='.$class.'&s='.$subject.'" class="btn btn-danger btn-xs" ><span class="fa fa-trash-o fw-fa"></span> Delete</a>
  </td>';
 
 //echo '<td>';
@@ -227,8 +241,8 @@ echo '<td > <a title="Edit Details" href="dash.php?q=8&id='.$lid.'"  class="btn 
 echo '</table></div></div>';
 
 //question papers
-echo ' <h3 align="center" >List of Question papers | Add <a href="dash.php?q=13" class="btn btn-primary">  <i class="fa fa-plus-circle fw-fa"></i> New</a></h3> ';
-$qp=mysqli_query($con,"SELECT * FROM lesson where Category=''" )or die('Error223');
+echo ' <h3 align="center" >List of Question papers | Add <a href="dash.php?q=13&c='.$class.'&s='.$subject.'" class="btn btn-primary">  <i class="fa fa-plus-circle fw-fa"></i> New</a></h3> ';
+$qp=mysqli_query($con,"SELECT * FROM lesson where grade='$class' AND `subject`='$subject' AND Category=''" )or die('Error223');
 echo  '<div class="panel title"><div class="table-responsive">
 <table class="table table-striped title1" >
 <tr style="color:red"><td><b>No</b></td><td><b>Chapter</b></td><td><b>Question Paper Title</b></td><td><b>Action</b></td><td><b>Answers</b></td><td><b>Publish Marks</b></td></tr>';
@@ -246,19 +260,19 @@ echo '<tr><td style="color:#99cc32"><b>'.$c.'</b></td><td>'.$c1.'</td><td>'.$t.'
 
 if ($categ=="") {
   # code...
-  $view = "dash.php?q=10&id=".$lid;
+  $view = "dash.php?q=10&id=".$lid."&c=".$class."&s=".$subject;
 }else{
-  $view = "dash.php?q=10&id=".$lid;
+  $view = "dash.php?q=10&id=".$lid."&c=".$class."&s=".$subject;
 
 }
 
-echo '<td > <a title="Edit Details" href="dash.php?q=14&id='.$lid.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-edit fw-fa"></span> Edit</a> 
-<a title="Change File" href="dash.php?q=9&id='.$lid.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-upload fw-fa"></span> Change File</a> 
+echo '<td > <a title="Edit Details" href="dash.php?q=14&id='.$lid.'&c='.$class.'&s='.$subject.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-edit fw-fa"></span> Edit</a> 
+<a title="Change File" href="dash.php?q=9&id='.$lid.'&c='.$class.'&s='.$subject.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-upload fw-fa"></span> Change File</a> 
  <a title="View Files"  href="'.$view.'" class="btn btn-info btn-xs" ><span class="fa fa-info fw-fa"></span> View</a>
- <a title="Delete" href="controller.php?action=delete&id='.$lid.'" class="btn btn-danger btn-xs" ><span class="fa fa-trash-o fw-fa"></span> Delete</a>
+ <a title="Delete" href="controller.php?action=delete&id='.$lid.'&c='.$class.'&s='.$subject.'" class="btn btn-danger btn-xs" ><span class="fa fa-trash-o fw-fa"></span> Delete</a>
  </td>
- <td > <a title="Edit Details" href="dash.php?q=15&id='.$lid.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-edit fw-fa"></span>View Student Answers</a> </td>
- <td><a title="Change File" href="dash.php?q=17&id='.$lid.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-upload fw-fa"></span>Publish Marks</a></td>';
+ <td > <a title="Edit Details" href="dash.php?q=15&id='.$lid.'&c='.$class.'&s='.$subject.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-edit fw-fa"></span>View Student Answers</a> </td>
+ <td><a title="Change File" href="dash.php?q=17&id='.$lid.'&c='.$class.'&s='.$subject.'"  class="btn btn-primary btn-xs  ">  <span class="fa fa-upload fw-fa"></span>Publish Marks</a></td>';
 
 //echo '<td>';
 }
@@ -269,6 +283,8 @@ echo '</table></div></div>';
 <?php if(@$_GET['q']==15) {
   require_once ("include/initialize.php");
 @$id = $_GET['id'];
+$class=@$_GET['c'];
+$subject=@$_GET['s'];
  if($id==''){
 //redirect("index.php");
 }
@@ -293,14 +309,14 @@ if($mk==""){
 }else{
   $mk=$mk;
 }
-$view2 = "dash.php?q=16&id=".$ql;
+$view2 = "dash.php?q=16&id=".$ql."&e=".$se."&c=".$class."&s=".$subject;
 
 $c++;
 
 
 echo '<tr><td style="color:#99cc32"><b>'.$c.'</b></td><td>'.$sn.'</td><td>'.$se.'</td>';
 echo '<td ><a title="View Files"  href="'.$view2.'" class="btn btn-info btn-xs" ><span class="fa fa-info fw-fa"></span> View</a></td>';
-echo '<td> <form action="controller.php?action=editmarks"  method="POST" enctype="multipart/form-data">
+echo '<td> <form action="controller.php?action=editmarks&c='.$class.'&s='.$subject.'"  method="POST" enctype="multipart/form-data">
 <input class=" " id="marks" name="marks" placeholder="'.$mk.'" type="text" value="'.$mk.'"> 
 <input name="flocation" id="flocation" type="hidden" type="text" value="'.$ll.'">
 <input name="fid" id="fid" type="hidden" type="text" value="'.$ql.'">
@@ -312,7 +328,7 @@ echo '<td> <form action="controller.php?action=editmarks"  method="POST" enctype
  
 }
 echo '</table></div>';
-echo '<form action="controller.php?action=pdf" method="POST">
+echo '<form action="controller.php?action=pdf&c='.$class.'&s='.$subject.'" method="POST">
   <input name="fid" id="fid" type="hidden" type="text" value="'.$ql.'">   
   <input name="chapter" id="chapter" type="hidden" type="text" value="'.$cp.'"> 
   <input name="qtitle" id="qtitle" type="hidden" type="text" value="'.$ct.'"> 
@@ -330,8 +346,12 @@ echo '</div>';
  if($id==''){
 //redirect("index.php");
 }
+@$e = $_GET['e'];
+ if($e==''){
+//redirect("index.php");
+}
 $answer = New answer();
-$res = $answer->single_answer1($id);
+$res = $answer->single_answer1($id, $e);
 
 $fl = $res->FileLocation;
 $sn = $res->studentName;
@@ -345,8 +365,13 @@ echo '
 }
 ?>
 <!--feedback start-->
-<?php if(@$_GET['q']==3) {
-$result = mysqli_query($con,"SELECT * FROM `feedback` ORDER BY `feedback`.`date` DESC") or die('Error');
+<?php 
+if(@$_GET['q']==3) {
+
+  $class=@$_GET['c'];
+$subject1=@$_GET['s'];
+
+$result = mysqli_query($con,"SELECT * FROM `feedback` WHERE grade='$class' ORDER BY `feedback`.`date` DESC") or die('Error');
 echo  '<div class="panel"><div class="table-responsive"><table class="table table-striped title1">
 <tr><td><b>S.N.</b></td><td><b>Subject</b></td><td><b>Email</b></td><td><b>Date</b></td><td><b>Time</b></td><td><b>By</b></td><td></td><td></td></tr>';
 $c=1;
@@ -359,18 +384,25 @@ while($row = mysqli_fetch_array($result)) {
 	$email = $row['email'];
 	$id = $row['id'];
 	 echo '<tr><td>'.$c++.'</td>';
-	echo '<td><a title="Click to open feedback" href="dash.php?q=3&fid='.$id.'">'.$subject.'</a></td><td>'.$email.'</td><td>'.$date.'</td><td>'.$time.'</td><td>'.$name.'</td>
-	<td><a title="Open Feedback" href="dash.php?q=3&fid='.$id.'"><b><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></b></a></td>';
+   
+	echo '<td><a title="Click to open feedback" href="dash.php?q=3&c='.$class.'&s='.$subject1.'&fid='.$id.'">'.$subject.'</a></td><td>'.$email.'</td><td>'.$date.'</td><td>'.$time.'</td><td>'.$name.'</td>
+	<td><a title="Open Feedback" href="dash.php?q=3&c='.$class.'&s='.$subject1.'&fid='.$id.'"><b><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></b></a></td>';
 	echo '<td><a title="Delete Feedback" href="update.php?fdid='.$id.'"><b><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></b></a></td>
 
 	</tr>';
 }
 echo '</table></div></div>';
 }
+
+
 ?>
 <!--feedback closed-->
 <!--add new lesson-->
 <?php if(@$_GET['q']==7) {
+
+$class=@$_GET['c'];
+$subject=@$_GET['s'];
+
 echo '<form class="form-horizontal span6" action="controller.php?action=add" method="POST" enctype="multipart/form-data">
 
 <div class="row">
@@ -405,6 +437,9 @@ echo '<form class="form-horizontal span6" action="controller.php?action=add" met
            </div>
          </div>
        </div>
+
+       <input name="subject" id="subject" type="hidden" value="'.$subject.'">
+       <input name="class" id="class" type="hidden" value="'.$class.'">
 
         <div class="form-group">
          <div class="col-md-11">
@@ -448,7 +483,9 @@ echo '<form class="form-horizontal span6" action="controller.php?action=add" met
 <!--end add lesson-->
 <!--add new question papers-->
 <?php if(@$_GET['q']==13) {
-echo '<form class="form-horizontal span6" action="controller.php?action=addp" method="POST" enctype="multipart/form-data">
+  $class=@$_GET['c'];
+  $subject=@$_GET['s'];
+echo '<form class="form-horizontal span6" action="controller.php?action=addp&c='.$class.'&s='.$subject.'" method="POST" enctype="multipart/form-data">
 
 <div class="row">
 <div class="col-lg-12">
@@ -513,6 +550,9 @@ echo '<form class="form-horizontal span6" action="controller.php?action=addp" me
 <?php if(@$_GET['q']==8) {
   require_once ("include/initialize.php");
 @$id = $_GET['id'];
+$class=@$_GET['c'];
+$subject=@$_GET['s'];
+
  if($id==''){
 //redirect("index.php");
 }
@@ -525,7 +565,7 @@ $fl = $res->FileLocation;
 $cc = $res->Category;
 
 
-echo '<form class="form-horizontal span6" action="controller.php?action=edit" method="POST" enctype="multipart/form-data">
+echo '<form class="form-horizontal span6" action="controller.php?action=edit&c='.$class.'&s='.$subject.'" method="POST" enctype="multipart/form-data">
 
 <div class="row">
 <div class="col-lg-12">
@@ -602,7 +642,11 @@ echo '<form class="form-horizontal span6" action="controller.php?action=edit" me
 <!--edit question start-->
 <?php if(@$_GET['q']==14) {
   require_once ("include/initialize.php");
+
 @$id = $_GET['id'];
+$class=@$_GET['c'];
+$subject=@$_GET['s'];
+
  if($id==''){
 //redirect("index.php");
 }
@@ -615,7 +659,7 @@ $fl = $res->FileLocation;
 $cc = $res->Category;
 
 
-echo '<form class="form-horizontal span6" action="controller.php?action=edit" method="POST" enctype="multipart/form-data">
+echo '<form class="form-horizontal span6" action="controller.php?action=edit&c='.$class.'&s='.$subject.'" method="POST" enctype="multipart/form-data">
 
 <div class="row">
 <div class="col-lg-12">
@@ -680,6 +724,9 @@ echo '<form class="form-horizontal span6" action="controller.php?action=edit" me
 <?php if(@$_GET['q']==9) {
   require_once ("include/initialize.php");
 @$id = $_GET['id'];
+$class=@$_GET['c'];
+$subject=@$_GET['s'];
+
  if($id==''){
 //redirect("index.php");
 }
@@ -692,7 +739,7 @@ $fl = $res->FileLocation;
 $cc = $res->Category;
 
 
-echo '<form class="form-horizontal span6" action="controller.php?action=updatefiles" method="POST" enctype="multipart/form-data">
+echo '<form class="form-horizontal span6" action="controller.php?action=updatefiles&c='.$class.'&s='.$subject.'" method="POST" enctype="multipart/form-data">
 
 <div class="row">
 <div class="col-lg-12">
@@ -767,6 +814,8 @@ echo '<form class="form-horizontal span6" action="controller.php?action=updatefi
 <?php if(@$_GET['q']==17) {
   require_once ("include/initialize.php");
 @$id = $_GET['id'];
+$class=@$_GET['c'];
+$subject=@$_GET['s'];
  if($id==''){
 //redirect("index.php");
 }
@@ -779,7 +828,7 @@ $fl = $res->FileLocation;
 $cc = $res->Category;
 $ml = $res->marksLocation;
 
-echo '<form class="form-horizontal span6" action="controller.php?action=publishmarks" method="POST" enctype="multipart/form-data">
+echo '<form class="form-horizontal span6" action="controller.php?action=publishmarks&c='.$class.'&s='.$subject.'" method="POST" enctype="multipart/form-data">
 
 <div class="row">
 <div class="col-lg-12">
@@ -916,7 +965,7 @@ echo '
 ?>
 <!--feedback reading portion start-->
 <?php if(@$_GET['fid']) {
-echo '<br />';
+
 $id=@$_GET['fid'];
 $result = mysqli_query($con,"SELECT * FROM feedback WHERE id='$id' ") or die('Error');
 while($row = mysqli_fetch_array($result)) {
@@ -936,10 +985,12 @@ echo '<div class="panel"<a title="Back to Archive" href="update.php?q1=2"><b><sp
 <!--add quiz start-->
 <?php
 if(@$_GET['q']==4 && !(@$_GET['step']) ) {
+  $class=@$_GET['c'];
+$subject=@$_GET['s'];
 echo ' 
 <div class="row">
 <span class="title1" style="margin-left:40%;font-size:30px;"><b>Enter Quiz Details</b></span><br /><br />
- <div class="col-md-3"></div><div class="col-md-6">   <form class="form-horizontal title1" name="form" action="update.php?q=addquiz"  method="POST">
+ <div class="col-md-3"></div><div class="col-md-6">   <form class="form-horizontal title1" name="form" action="update.php?q=addquiz&c='.$class.'&s='.$subject.'"  method="POST">
 <fieldset>
 
 
@@ -1028,10 +1079,12 @@ echo '
 <!--add quiz step2 start-->
 <?php
 if(@$_GET['q']==4 && (@$_GET['step'])==2 ) {
+  $class=@$_GET['c'];
+$subject=@$_GET['s'];
 echo ' 
 <div class="row">
 <span class="title1" style="margin-left:40%;font-size:30px;"><b>Enter Question Details</b></span><br /><br />
- <div class="col-md-3"></div><div class="col-md-6"><form class="form-horizontal title1" name="form" action="update.php?q=addqns&n='.@$_GET['n'].'&eid='.@$_GET['eid'].'&ch=4 "  method="POST">
+ <div class="col-md-3"></div><div class="col-md-6"><form class="form-horizontal title1" name="form" action="update.php?q=addqns&n='.@$_GET['n'].'&eid='.@$_GET['eid'].'&ch=4&c='.$class.'&s='.$subject.'"  method="POST">
 <fieldset>
 ';
  
@@ -1104,7 +1157,10 @@ echo '<div class="form-group">
 <!--remove quiz-->
 <?php if(@$_GET['q']==5) {
 
-$result = mysqli_query($con,"SELECT * FROM quiz ORDER BY date DESC") or die('Error');
+$class=@$_GET['c'];
+$subject=@$_GET['s'];
+
+$result = mysqli_query($con,"SELECT * FROM quiz WHERE grade='$class' AND subject='$subject' ORDER BY date DESC") or die('Error');
 echo  '<div class="panel"><div class="table-responsive"><table class="table table-striped title1">
 <tr><td><b>S.N.</b></td><td><b>Topic</b></td><td><b>Total question</b></td><td><b>Marks</b></td><td><b>Time limit</b></td><td></td></tr>';
 $c=1;
@@ -1115,7 +1171,7 @@ while($row = mysqli_fetch_array($result)) {
     $time = $row['time'];
 	$eid = $row['eid'];
 	echo '<tr><td>'.$c++.'</td><td>'.$title.'</td><td>'.$total.'</td><td>'.$sahi*$total.'</td><td>'.$time.'&nbsp;min</td>
-	<td><b><a href="update.php?q=rmquiz&eid='.$eid.'" class="pull-right btn sub1" style="margin:0px;background:red"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>&nbsp;<span class="title1"><b>Remove</b></span></a></b></td></tr>';
+	<td><b><a href="update.php?q=rmquiz&eid='.$eid.'&c='.$class.'&s='.$subject.'" class="pull-right btn sub1" style="margin:0px;background:red"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>&nbsp;<span class="title1"><b>Remove</b></span></a></b></td></tr>';
 }
 $c=0;
 echo '</table></div></div>';
@@ -1128,6 +1184,10 @@ echo '</table></div></div>';
 <?php if(@$_GET['q']==18) {
   require_once ("include/initialize.php");
 @$id = $_GET['id'];
+
+$class1=@$_GET['c'];
+$subject1=@$_GET['s'];
+
  if($id==''){
 //redirect("index.php");
 }
@@ -1144,6 +1204,7 @@ echo '
 		<form action="" method="POST">
 			
 			<textarea class="txtarea" id="message" name="message"></textarea>
+     
 
 		</form>
 
@@ -1186,8 +1247,12 @@ echo '
 }
 ?>
 
+
 <script>
 
+
+var s = "<?php echo $subject1; ?>";
+var c = "<?php echo $class1; ?>";
 
 		$(document).ready(function(){
 			loadChat();
@@ -1199,10 +1264,11 @@ echo '
 
 
 			var message = $(this).val();
+      
 
 			if( e.which == 13 ){
 
-				$.post('handlers/ajax.php?action=SendMessage&message='+message, function(response){
+				$.post('handlers/ajax.php?action=SendMessage&message='+message+'&c='+c+'&s='+s, function(response){
 					
 					loadChat();
 					$('#message').val('');
@@ -1217,7 +1283,7 @@ echo '
 
 		function loadChat()
 		{
-			$.post('handlers/ajax.php?action=getChat', function(response){
+			$.post('handlers/ajax.php?action=getChat&c='+c+'&s='+s, function(response){
 				
 				$('.chathistory').html(response);
 

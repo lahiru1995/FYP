@@ -95,23 +95,23 @@
       <div class="col text-center">
         <div class="col-lg-12">
           <p>
-            <a href="class01.php?q=1" class="btn btn-sq-lg btn-info">
+            <a href="classt.php?q=1" class="btn btn-sq-lg btn-info">
                 <i class="fa fa-user fa-5x"></i><br/>
                -  G  R  A  D  E  - <br> 0 1
             </a>
-            <a href="class01.php?q=2" class="btn btn-sq-lg btn-info">
+            <a href="classt.php?q=2" class="btn btn-sq-lg btn-info">
                 <i class="fa fa-user fa-5x"></i><br/>
                 -  G  R  A  D  E  - <br> 0 2
             </a>
-            <a href="class01.php?q=3" class="btn btn-sq-lg btn-info">
+            <a href="classt.php?q=3" class="btn btn-sq-lg btn-info">
                 <i class="fa fa-user fa-5x"></i><br/>
                 -  G  R  A  D  E  - <br> 0 3
             </a>
-            <a href="class01.php?q=4" class="btn btn-sq-lg btn-info">
+            <a href="classt.php?q=4" class="btn btn-sq-lg btn-info">
                 <i class="fa fa-user fa-5x"></i><br/>
                 -  G  R  A  D  E  - <br> 0 4
             </a>
-            <a href="class01.php?q=5" class="btn btn-sq-lg btn-info">
+            <a href="classt.php?q=5" class="btn btn-sq-lg btn-info">
                 <i class="fa fa-user fa-5x"></i><br/>
                 -  G  R  A  D  E  - <br> 0 5
             </a>
@@ -124,27 +124,27 @@
     <div class="col text-center">
         <div class="col-lg-12">
           <p>
-            <a href="class01.php?q=6" class="btn btn-sq-lg btn-primary">
+            <a href="classt.php?q=6" class="btn btn-sq-lg btn-primary">
                 <i class="fa fa-user fa-5x"></i><br/>
                 -  G  R  A  D  E  - <br> 0 6
             </a>
-            <a href="class01.php?q=7" class="btn btn-sq-lg btn-primary">
+            <a href="classt.php?q=7" class="btn btn-sq-lg btn-primary">
                 <i class="fa fa-user fa-5x"></i><br/>
                 -  G  R  A  D  E  - <br> 0 7
             </a>
-            <a href="class01.php?q=8" class="btn btn-sq-lg btn-primary">
+            <a href="classt.php?q=8" class="btn btn-sq-lg btn-primary">
               <i class="fa fa-user fa-5x"></i><br/>
               -  G  R  A  D  E  - <br> 0 8
             </a>
-            <a href="class01.php?q=9" class="btn btn-sq-lg btn-primary">
+            <a href="classt.php?q=9" class="btn btn-sq-lg btn-primary">
               <i class="fa fa-user fa-5x"></i><br/>
               -  G  R  A  D  E  - <br> 0 9
             </a>
-            <a href="class01.php?q=10" class="btn btn-sq-lg btn-primary">
+            <a href="classt.php?q=10" class="btn btn-sq-lg btn-primary">
               <i class="fa fa-user fa-5x"></i><br/>
               -  G  R  A  D  E  - <br> 1 0
             </a>
-            <a href="class01.php?q=11" class="btn btn-sq-lg btn-primary">
+            <a href="classt.php?q=11" class="btn btn-sq-lg btn-primary">
               <i class="fa fa-user fa-5x"></i><br/>
               -  G  R  A  D  E  - <br> 1 1
             </a>
@@ -157,11 +157,11 @@
     <div class="col text-center">
         <div class="col-lg-12">
           <p>
-          <a href="home_al.php" class="btn btn-sq-lg btn-success">
+          <a href="home_alt.php" class="btn btn-sq-lg btn-success">
               <i class="fa fa-user fa-5x"></i><br/>
               -  G  R  A  D  E  - <br> 1 2
             </a>
-            <a href="home_al1.php" class="btn btn-sq-lg btn-success">
+            <a href="home_al1t.php" class="btn btn-sq-lg btn-success">
               <i class="fa fa-user fa-5x"></i><br/>
               -  G  R  A  D  E  - <br> 1 3
             </a>

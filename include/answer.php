@@ -39,10 +39,10 @@ require_once(LIB_PATH.DS.'database.php');
 			return $cur;
 	}
 
-	function single_answer1($id=0){
+	function single_answer1($id=0, $studentEmail=""){
 		global $mydb;
 		$mydb->setQuery("SELECT * FROM ".self::$tblname." 
-			Where questionId= '{$id}' LIMIT 1");
+			Where questionId= '{$id}' AND studentEmail= '{$studentEmail}' LIMIT 1");
 		$cur = $mydb->loadSingleResult();
 		return $cur;
 }

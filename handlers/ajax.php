@@ -12,9 +12,12 @@ if( isset($_REQUEST['action']) ){
 
 		case "SendMessage":
 
+			$class=@$_GET['c'];
+			$subject=@$_GET['s'];
+
 			session_start();
 
-			$query = $db->prepare("INSERT INTO chat SET user=?, message=?");
+			$query = $db->prepare("INSERT INTO chat SET user=?, message=?, grade='$class', subject='$subject'");
 
 			$query->execute([$_SESSION['user'], $_REQUEST['message']]);
 
@@ -28,8 +31,10 @@ if( isset($_REQUEST['action']) ){
 
 		case "getChat":
 
+			$class=@$_GET['c'];
+			$subject=@$_GET['s'];
 
-			$query = $db->prepare("SELECT * from chat");
+			$query = $db->prepare("SELECT * from chat WHERE grade='$class' AND subject='$subject'");
 			$query->execute();
 
 			$rs = $query->fetchAll(PDO::FETCH_OBJ);

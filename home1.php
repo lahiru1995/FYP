@@ -64,7 +64,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar" <?php  echo'class="active"'; ?> ></span>
       </button>
-      <a class="navbar-brand" href="#"><b></b></a>
+      <a class="navbar-brand" href="#"><b>Netcamp</b></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -124,27 +124,27 @@
     <div class="col text-center">
         <div class="col-lg-12">
           <p>
-            <a href="class01.php?q=6" class="btn btn-sq-lg btn-primary">
+            <a href="#" class="btn btn-sq-lg btn-primary">
                 <i class="fa fa-user fa-5x"></i><br/>
                 -  G  R  A  D  E  - <br> 0 6
             </a>
-            <a href="class01.php?q=7" class="btn btn-sq-lg btn-primary">
+            <a href="#" class="btn btn-sq-lg btn-primary">
                 <i class="fa fa-user fa-5x"></i><br/>
                 -  G  R  A  D  E  - <br> 0 7
             </a>
-            <a href="class01.php?q=8" class="btn btn-sq-lg btn-primary">
+            <a href="#" class="btn btn-sq-lg btn-primary">
               <i class="fa fa-user fa-5x"></i><br/>
               -  G  R  A  D  E  - <br> 0 8
             </a>
-            <a href="class01.php?q=9" class="btn btn-sq-lg btn-primary">
+            <a href="#" class="btn btn-sq-lg btn-primary">
               <i class="fa fa-user fa-5x"></i><br/>
               -  G  R  A  D  E  - <br> 0 9
             </a>
-            <a href="class01.php?q=10" class="btn btn-sq-lg btn-primary">
+            <a href="#" class="btn btn-sq-lg btn-primary">
               <i class="fa fa-user fa-5x"></i><br/>
               -  G  R  A  D  E  - <br> 1 0
             </a>
-            <a href="class01.php?q=11" class="btn btn-sq-lg btn-primary">
+            <a href="#" class="btn btn-sq-lg btn-primary">
               <i class="fa fa-user fa-5x"></i><br/>
               -  G  R  A  D  E  - <br> 1 1
             </a>
@@ -157,11 +157,11 @@
     <div class="col text-center">
         <div class="col-lg-12">
           <p>
-          <a href="home_al.php" class="btn btn-sq-lg btn-success">
+          <a href="#" class="btn btn-sq-lg btn-success">
               <i class="fa fa-user fa-5x"></i><br/>
               -  G  R  A  D  E  - <br> 1 2
             </a>
-            <a href="home_al1.php" class="btn btn-sq-lg btn-success">
+            <a href="#" class="btn btn-sq-lg btn-success">
               <i class="fa fa-user fa-5x"></i><br/>
               -  G  R  A  D  E  - <br> 1 3
             </a>
@@ -169,7 +169,6 @@
           </p>
         </div>
         </div>
-        
     </div>
 
 </div>

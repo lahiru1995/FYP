@@ -47,11 +47,15 @@ switch ($action) {
 	}
    
 	function doInsert(){ 
+		
 		if(isset($_POST['save'])){ 
 
 			$chapter = $_POST['LessonChapter'];
 			$title  = $_POST['LessonTitle'];
 			$category = $_POST['Category'];
+
+			$class  = $_POST['class'];
+			$subject = $_POST['subject'];
 
 			$filename = UploadImage();
 			$location = "files/". $filename ;
@@ -61,10 +65,12 @@ switch ($action) {
 			$lesson->LessonTitle   = $title;
 			$lesson->FileLocation  = $location;
 			$lesson->Category  = $category;
+			$lesson->grade  = $class;
+			$lesson->subject  = $subject;
 			$lesson->create(); 
 
 			message("Lesson has been saved in the database.", "success");
-			redirect("dash.php?q=6");
+			redirect("dash.php?q=6&c=".$class."&s=".$subject);
 			
 		}  
 	}
@@ -75,6 +81,8 @@ switch ($action) {
 			$chapter = $_POST['LessonChapter'];
 			$title  = $_POST['LessonTitle'];
 			$category = "";
+			$class=@$_GET['c'];
+			$subject=@$_GET['s'];
 
 			$filename = UploadImage();
 			$location = "files/". $filename ;
@@ -84,10 +92,12 @@ switch ($action) {
 			$lesson->LessonTitle   = $title;
 			$lesson->FileLocation  = $location;
 			$lesson->Category  = $category;
+			$lesson->grade  = $class;
+			$lesson->subject  = $subject;
 			$lesson->create(); 
 
 			message("Lesson has been saved in the database.", "success");
-			redirect("dash.php?q=6");
+			redirect("dash.php?q=6&c=".$class."&s=".$subject);
 			
 		}  
 	}
@@ -101,6 +111,9 @@ switch ($action) {
 			$title  = $_POST['questionTitle'];
 			$quid = $_POST['questionId'];
 			
+			$class=@$_GET['c'];
+			$subject=@$_GET['s'];
+
 			$category = "";
 
 			$filename = UploadImage();
@@ -113,10 +126,12 @@ switch ($action) {
 			$answer->questionTitle  = $title;
 			$answer->questionId  = $quid;
 			$answer->FileLocation  = $location;
+			$lesson->grade  = $class;
+			$lesson->subject  = $subject;
 			$answer->create(); 
 
 			message("Lesson has been saved in the database.", "success");
-			redirect("account.php?q=1");
+			redirect("account.php?q=01&c=".$class."&s=".$subject);
 			
 		}/*{
 			$filename = UploadImage();
@@ -136,7 +151,8 @@ switch ($action) {
 			$mar = $_POST['marks'];
 			$fl  = $_POST['flocation'];
 			$fid  = $_POST['fid'];
- 
+			$class=@$_GET['c'];
+			$subject=@$_GET['s'];
 				// $filename = UploadImage();
 				// $location = "files/". $filename ;
 
@@ -148,7 +164,7 @@ switch ($action) {
 				$answer->update1($fl); 
 
 				message("Lesson has been saved in the database.", "success");
-				redirect("dash.php?q=15&id=".$fid);
+				redirect("dash.php?q=15&id=".$fid."&c=".$class."&s=".$subject);
 			
 		}
 	}
@@ -159,6 +175,8 @@ switch ($action) {
 			$cp  = $_POST['chapter']; 
 			$ct  = $_POST['qtitle']; 
 			$c=0; 
+			$class=@$_GET['c'];
+			$subject=@$_GET['s'];
 			$answer = new answer();
       require_once('tcpdf/tcpdf.php');    
       $obj_pdf = new TCPDF('P', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);    
@@ -224,7 +242,8 @@ switch ($action) {
 			$id = $_POST['LessonID'];
 			$category = $_POST['Category'];
 
- 
+			$class=@$_GET['c'];
+			$subject=@$_GET['s'];
 				// $filename = UploadImage();
 				// $location = "files/". $filename ;
 
@@ -236,7 +255,7 @@ switch ($action) {
 				$lesson->update($id); 
 
 				message("Lesson has been saved in the database.", "success");
-				redirect("dash.php?q=6");
+				redirect('dash.php?q=6&c='.$class.'&s='.$subject.'');
 			
 		}
 	}
@@ -245,12 +264,14 @@ switch ($action) {
 	function doDelete(){
 		 
 			$id = 	$_GET['id'];
+			$class=@$_GET['c'];
+			$subject=@$_GET['s'];
 
 			$lesson = New Lesson();
 			$lesson->delete($id);
  
 			message("Lesson has been removed!","info");
-			redirect('dash.php?q=6');
+			redirect('dash.php?q=6&c='.$class.'&s='.$subject.'');
 		 
 		
 	}
@@ -262,13 +283,15 @@ switch ($action) {
 
 				$filename = UploadImage();
 				$location = "files/". $filename ;
+				$class=@$_GET['c'];
+				$subject=@$_GET['s'];
 
 				$lesson = new Lesson(); 
 				$lesson->marksLocation  = $location;
 				$lesson->update($id); 
 
 				message("File has been updated in the database.", "success");
-				redirect("dash.php?q=6");	
+				redirect('dash.php?q=6&c='.$class.'&s='.$subject.'');	
 			
 		}
 	}
@@ -277,7 +300,8 @@ switch ($action) {
 	function dochangefile(){
 		if(isset($_POST['save'])){   
 			$id = $_POST['LessonID']; 
-
+			$class=@$_GET['c'];
+			$subject=@$_GET['s'];
  
 				$filename = UploadImage();
 				$location = "files/". $filename ;
@@ -287,7 +311,7 @@ switch ($action) {
 				$lesson->update($id); 
 
 				message("File has been updated in the database.", "success");
-				redirect("dash.php?q=6");	
+				redirect('dash.php?q=6&c='.$class.'&s='.$subject.'');	
 	 		
 		}
 	}

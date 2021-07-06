@@ -64,7 +64,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar" <?php  echo'class="active"'; ?> ></span>
       </button>
-      <a class="navbar-brand" href="#"><b></b></a>
+      <a class="navbar-brand" href="#"><b>Netcamp</b></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -91,86 +91,36 @@
 
 <div class="container">
 
-      <div class="row">
+      <div class="row" style="margin-top: 150px">
       <div class="col text-center">
         <div class="col-lg-12">
           <p>
-            <a href="class01.php?q=1" class="btn btn-sq-lg btn-info">
-                <i class="fa fa-user fa-5x"></i><br/>
-               -  G  R  A  D  E  - <br> 0 1
+            <a style="width: 200px" href="class01.php?q=112" class="btn btn-sq-lg btn-info">
+                <i class="fa fa-book fa-5x"></i><br/>
+               -  Physical Science Subjects - <br> 
             </a>
-            <a href="class01.php?q=2" class="btn btn-sq-lg btn-info">
-                <i class="fa fa-user fa-5x"></i><br/>
-                -  G  R  A  D  E  - <br> 0 2
+            <a style="width: 200px" href="class01.php?q=212" class="btn btn-sq-lg btn-info">
+                <i class="fa fa-book fa-5x"></i><br/>
+                -  Biological Science Subjects - <br>
             </a>
-            <a href="class01.php?q=3" class="btn btn-sq-lg btn-info">
-                <i class="fa fa-user fa-5x"></i><br/>
-                -  G  R  A  D  E  - <br> 0 3
+            <a style="width: 200px" href="class01.php?q=312" class="btn btn-sq-lg btn-info">
+                <i class="fa fa-book fa-5x"></i><br/>
+                -  Commerce Subjects - <br> 
             </a>
-            <a href="class01.php?q=4" class="btn btn-sq-lg btn-info">
-                <i class="fa fa-user fa-5x"></i><br/>
-                -  G  R  A  D  E  - <br> 0 4
+            <a style="width: 200px" href="class01.php?q=412" class="btn btn-sq-lg btn-info">
+                <i class="fa fa-book fa-5x"></i><br/>
+                -  Arts Subjects - <br> 
             </a>
-            <a href="class01.php?q=5" class="btn btn-sq-lg btn-info">
-                <i class="fa fa-user fa-5x"></i><br/>
-                -  G  R  A  D  E  - <br> 0 5
-            </a>
-          </p>
-        </div>
-        </div>
-    </div>
-
-    <div class="row">
-    <div class="col text-center">
-        <div class="col-lg-12">
-          <p>
-            <a href="class01.php?q=6" class="btn btn-sq-lg btn-primary">
-                <i class="fa fa-user fa-5x"></i><br/>
-                -  G  R  A  D  E  - <br> 0 6
-            </a>
-            <a href="class01.php?q=7" class="btn btn-sq-lg btn-primary">
-                <i class="fa fa-user fa-5x"></i><br/>
-                -  G  R  A  D  E  - <br> 0 7
-            </a>
-            <a href="class01.php?q=8" class="btn btn-sq-lg btn-primary">
-              <i class="fa fa-user fa-5x"></i><br/>
-              -  G  R  A  D  E  - <br> 0 8
-            </a>
-            <a href="class01.php?q=9" class="btn btn-sq-lg btn-primary">
-              <i class="fa fa-user fa-5x"></i><br/>
-              -  G  R  A  D  E  - <br> 0 9
-            </a>
-            <a href="class01.php?q=10" class="btn btn-sq-lg btn-primary">
-              <i class="fa fa-user fa-5x"></i><br/>
-              -  G  R  A  D  E  - <br> 1 0
-            </a>
-            <a href="class01.php?q=11" class="btn btn-sq-lg btn-primary">
-              <i class="fa fa-user fa-5x"></i><br/>
-              -  G  R  A  D  E  - <br> 1 1
+            <a style="width: 200px" href="class01.php?q=512" class="btn btn-sq-lg btn-info">
+                <i class="fa fa-book fa-5x"></i><br/>
+                -  Technology Subjects - <br> 
             </a>
           </p>
         </div>
         </div>
     </div>
 
-    <div class="row">
-    <div class="col text-center">
-        <div class="col-lg-12">
-          <p>
-          <a href="home_al.php" class="btn btn-sq-lg btn-success">
-              <i class="fa fa-user fa-5x"></i><br/>
-              -  G  R  A  D  E  - <br> 1 2
-            </a>
-            <a href="home_al1.php" class="btn btn-sq-lg btn-success">
-              <i class="fa fa-user fa-5x"></i><br/>
-              -  G  R  A  D  E  - <br> 1 3
-            </a>
-            
-          </p>
-        </div>
-        </div>
-        
-    </div>
+    
 
 </div>
 

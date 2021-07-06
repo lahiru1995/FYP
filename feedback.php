@@ -127,6 +127,41 @@ You can send us your feedback through e-mail on the following e-mail id:<br />
 </div>
 </div><!--End of row-->
 
+<!-- Text input-->
+<div class="row">
+<div class="col-md-3"><b>Grade:</b></div>
+
+  
+  <div class="col-md-9">
+  <div class="form-group">
+    <select id="grade" name="grade" placeholder="Enter your class" class="form-control input-md" >
+   <option value="Male">Select your Grade</option>
+  <option value="1">Grade 1</option>
+  <option value="2">Grade 2</option> 
+  <option value="3">Grade 3</option>
+  <option value="4">Grade 4</option>
+  <option value="5">Grade 5</option>
+  <option value="6">Grade 6</option>
+  <option value="7">Grade 7</option>
+  <option value="8">Grade 8</option>
+  <option value="9">Grade 9</option>
+  <option value="10">Grade 10</option>
+  <option value="11">Grade 11</option>
+  <option value="12-math">Grade 12-Math</option>
+  <option value="12-bio">Grade 12-Bio</option>
+  <option value="12-Com">Grade 12-Commerce</option>
+  <option value="12-tech">Grade 12-Tech</option>
+  <option value="12-art">Grade 12-Art</option>
+  <option value="13-math">Grade 13-Math</option>
+  <option value="13-bio">Grade 13-Bio</option>
+  <option value="13-Com">Grade 13-Commerce</option>
+  <option value="13-tech">Grade 13-Tech</option>
+  <option value="13-art">Grade 13-Art</option>
+  
+  </select>
+  </div></div>
+</div>
+
 <div class="form-group"> 
 <textarea rows="5" cols="8" name="feedback" class="form-control" placeholder="Write feedback here..."></textarea>
 </div>
