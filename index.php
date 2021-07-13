@@ -193,7 +193,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
 <div class="form-group">
   <label class="col-md-12 control-label" for=""></label>
   <div class="col-md-12"> 
-    <input  type="submit" class="sub" value="sign up" class="btn btn-primary"/>
+    <input  type="submit" class="sub" value="Sign up" class="btn btn-primary"/>
   </div>
 </div>
 
@@ -208,13 +208,15 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
 <!--Footer start-->
 <div class="row footer">
 <div class="col-md-3 box">
-<a href="aboutus.php" target="_blank">Parents Login</a>
+<a href="aboutus.php" target="_blank" >About us</a>
 </div>
+<div class="col-md-3 box">
+<a href="home_p.php" target="_blank">Parents Login</a>
+</div>
+
 <div class="col-md-3 box">
 <a href="#" data-toggle="modal" data-target="#login">Teachers Login</a></div>
-<div class="col-md-3 box">
-<a href="#" data-toggle="modal" data-target="#developers">Admin Login</a>
-</div>
+
 <div class="col-md-3 box">
 <a href="feedback.php" target="_blank">Feedback</a></div></div>
 <!-- Modal For Developers-->

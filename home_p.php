@@ -64,7 +64,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar" <?php  echo'class="active"'; ?> ></span>
       </button>
-      <a class="navbar-brand" href="#"><b>Netcamp</b></a>
+      <a class="navbar-brand" href="#"><b></b></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -91,36 +91,86 @@
 
 <div class="container">
 
-      <div class="row" style="margin-top: 150px">
+      <div class="row">
       <div class="col text-center">
         <div class="col-lg-12">
           <p>
-            <a style="width: 200px" href="class01.php?q=112" class="btn btn-sq-lg btn-info">
-                <i class="fa fa-book fa-5x"></i><br/>
-               -  Physical Science Subjects - <br> 
+            <a href="class01p.php?q=1" style="margin:0px 5px 0px 5px" class="btn btn-sq-lg btn-info">
+                <i class="fa fa-user fa-5x"></i><br/>
+               -  G  R  A  D  E  - <br> 0 1
             </a>
-            <a style="width: 200px" href="class01.php?q=212" class="btn btn-sq-lg btn-info">
-                <i class="fa fa-book fa-5x"></i><br/>
-                -  Biological Science Subjects - <br>
+            <a href="class01p.php?q=2" style="margin:0px 5px 0px 5px" class="btn btn-sq-lg btn-info">
+                <i class="fa fa-user fa-5x"></i><br/>
+                -  G  R  A  D  E  - <br> 0 2
             </a>
-            <a style="width: 200px" href="class01.php?q=312" class="btn btn-sq-lg btn-info">
-                <i class="fa fa-book fa-5x"></i><br/>
-                -  Commerce Subjects - <br> 
+            <a href="class01p.php?q=3" style="margin:0px 5px 0px 5px" class="btn btn-sq-lg btn-info">
+                <i class="fa fa-user fa-5x"></i><br/>
+                -  G  R  A  D  E  - <br> 0 3
             </a>
-            <a style="width: 200px" href="class01.php?q=412" class="btn btn-sq-lg btn-info">
-                <i class="fa fa-book fa-5x"></i><br/>
-                -  Arts Subjects - <br> 
+            <a href="class01p.php?q=4" style="margin:0px 5px 0px 5px" class="btn btn-sq-lg btn-info">
+                <i class="fa fa-user fa-5x"></i><br/>
+                -  G  R  A  D  E  - <br> 0 4
             </a>
-            <a style="width: 200px" href="class01.php?q=512" class="btn btn-sq-lg btn-info">
-                <i class="fa fa-book fa-5x"></i><br/>
-                -  Technology Subjects - <br> 
+            <a href="class01p.php?q=5" style="margin:0px 5px 0px 5px" class="btn btn-sq-lg btn-info">
+                <i class="fa fa-user fa-5x"></i><br/>
+                -  G  R  A  D  E  - <br> 0 5
             </a>
           </p>
         </div>
         </div>
     </div>
 
-    
+    <div class="row">
+    <div class="col text-center">
+        <div class="col-lg-12">
+          <p>
+            <a href="class01p.php?q=6" style="margin:0px 5px 0px 5px" class="btn btn-sq-lg btn-primary">
+                <i class="fa fa-user fa-5x"></i><br/>
+                -  G  R  A  D  E  - <br> 0 6
+            </a>
+            <a href="class01p.php?q=7" style="margin:0px 5px 0px 5px" class="btn btn-sq-lg btn-primary">
+                <i class="fa fa-user fa-5x"></i><br/>
+                -  G  R  A  D  E  - <br> 0 7
+            </a>
+            <a href="class01p.php?q=8" style="margin:0px 5px 0px 5px" class="btn btn-sq-lg btn-primary">
+              <i class="fa fa-user fa-5x"></i><br/>
+              -  G  R  A  D  E  - <br> 0 8
+            </a>
+            <a href="class01p.php?q=9" style="margin:0px 5px 0px 5px" class="btn btn-sq-lg btn-primary">
+              <i class="fa fa-user fa-5x"></i><br/>
+              -  G  R  A  D  E  - <br> 0 9
+            </a>
+            <a href="class01p.php?q=10" style="margin:0px 5px 0px 5px" class="btn btn-sq-lg btn-primary">
+              <i class="fa fa-user fa-5x"></i><br/>
+              -  G  R  A  D  E  - <br> 1 0
+            </a>
+            <a href="class01p.php?q=11" style="margin:0px 5px 0px 5px" class="btn btn-sq-lg btn-primary">
+              <i class="fa fa-user fa-5x"></i><br/>
+              -  G  R  A  D  E  - <br> 1 1
+            </a>
+          </p>
+        </div>
+        </div>
+    </div>
+
+    <div class="row">
+    <div class="col text-center">
+        <div class="col-lg-12">
+          <p>
+          <a href="home_alp.php" style="margin:0px 5px 0px 5px" class="btn btn-sq-lg btn-success">
+              <i class="fa fa-user fa-5x"></i><br/>
+              -  G  R  A  D  E  - <br> 1 2
+            </a>
+            <a href="home_al1p.php" style="margin:0px 5px 0px 5px" class="btn btn-sq-lg btn-success">
+              <i class="fa fa-user fa-5x"></i><br/>
+              -  G  R  A  D  E  - <br> 1 3
+            </a>
+            
+          </p>
+        </div>
+        </div>
+        
+    </div>
 
 </div>
 

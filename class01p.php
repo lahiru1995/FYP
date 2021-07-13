@@ -63,7 +63,7 @@ echo '<span class="pull-right top title1" ><span class="log1"><span class="glyph
         <span class="icon-bar"></span>
         <span class="icon-bar" <?php  echo'class="active"'; ?> ></span>
       </button>
-      <a class="navbar-brand" href="home.php"><b>Back</b></a>
+      <a class="navbar-brand" href="home_p.php"><b>Back</b></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -102,28 +102,28 @@ echo '<div class="container">
       <div class="col text-center">
         <div class="col-lg-12">
           <p>
-          <a href="account.php?q=01&c=1&s=math" class="btn btn-primary btn-lg btn-block">
+          <a href="accountp.php?q=01&c=1&s=math" class="btn btn-primary btn-lg btn-block">
                 <i></i>
                 ගණිතය  - Mathematics
             </a>
-            <a href="account.php?q=01&c=1&s=Buddhism" class="btn btn-primary btn-lg btn-block">
+            <a href="accountp.php?q=01&c=1&s=Buddhism" class="btn btn-primary btn-lg btn-block">
                 <i></i>
                 බුද්ධ ධර්මය  -  Buddhism
             </a>
             
-            <a href="account.php?q=01&c=1&s=Sinhala" class="btn btn-primary btn-lg btn-block">
+            <a href="accountp.php?q=01&c=1&s=Sinhala" class="btn btn-primary btn-lg btn-block">
                 <i></i>
                 මව්බස - Sinhala Language 
             </a>
-            <a href="account.php?q=01&c=1&s=Tamil" class="btn btn-primary btn-lg btn-block">
+            <a href="accountp.php?q=01&c=1&s=Tamil" class="btn btn-primary btn-lg btn-block">
               <i></i>
                දෙමළ භාෂාව  - Tamil Language     
             </a>
-            <a href="account.php?q=01&c=1&s=English" class="btn btn-primary btn-lg btn-block">
+            <a href="accountp.php?q=01&c=1&s=English" class="btn btn-primary btn-lg btn-block">
                 <i></i>
               ඉංග්‍රීසි භාෂාව - English Language      
             </a>
-        <a href="account.php?q=01&c=1&s=Environment" class="btn btn-primary btn-lg btn-block">
+        <a href="accountp.php?q=01&c=1&s=Environment" class="btn btn-primary btn-lg btn-block">
                 <i></i>
                 පරිසරය ආශ්‍රිත ක්‍රියාකාරකම් - Environment Related Activities
             </a>
@@ -173,28 +173,28 @@ echo '<div class="container">
 <div class="col text-center">
   <div class="col-lg-12">
     <p>
-    <a href="account.php?q=01&c=2&s=math" class="btn btn-primary btn-lg btn-block">
+    <a href="accountp.php?q=01&c=2&s=math" class="btn btn-primary btn-lg btn-block">
           <i></i>
           ගණිතය  - Mathematics
       </a>
-      <a href="account.php?q=01&c=2&s=Buddhism" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=2&s=Buddhism" class="btn btn-primary btn-lg btn-block">
           <i></i>
           බුද්ධ ධර්මය  -  Buddhism
       </a>
       
-      <a href="account.php?q=01&c=2&s=Sinhala" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=2&s=Sinhala" class="btn btn-primary btn-lg btn-block">
           <i></i>
           මව්බස - Sinhala Language 
       </a>
-      <a href="account.php?q=01&c=2&s=Tamil" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=2&s=Tamil" class="btn btn-primary btn-lg btn-block">
         <i></i>
          දෙමළ භාෂාව  - Tamil Language     
       </a>
-      <a href="account.php?q=01&c=2&s=English" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=2&s=English" class="btn btn-primary btn-lg btn-block">
           <i></i>
         ඉංග්‍රීසි භාෂාව - English Language      
       </a>
-  <a href="account.php?q=01&c=2&s=Environment" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=2&s=Environment" class="btn btn-primary btn-lg btn-block">
           <i></i>
           පරිසරය ආශ්‍රිත ක්‍රියාකාරකම් - Environment Related Activities
       </a>
@@ -218,28 +218,28 @@ echo '<div class="container">
 <div class="col text-center">
   <div class="col-lg-12">
     <p>
-    <a href="account.php?q=01&c=3&s=math" class="btn btn-primary btn-lg btn-block">
+    <a href="accountp.php?q=01&c=3&s=math" class="btn btn-primary btn-lg btn-block">
           <i></i>
           ගණිතය  - Mathematics
       </a>
-      <a href="account.php?q=01&c=3&s=Buddhism" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=3&s=Buddhism" class="btn btn-primary btn-lg btn-block">
           <i></i>
           බුද්ධ ධර්මය  -  Buddhism
       </a>
       
-      <a href="account.php?q=01&c=3&s=Sinhala" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=3&s=Sinhala" class="btn btn-primary btn-lg btn-block">
           <i></i>
           මව්බස - Sinhala Language 
       </a>
-      <a href="account.php?q=01&c=3&s=Tamil" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=3&s=Tamil" class="btn btn-primary btn-lg btn-block">
         <i></i>
          දෙමළ භාෂාව  - Tamil Language     
       </a>
-      <a href="account.php?q=01&c=3&s=English" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=3&s=English" class="btn btn-primary btn-lg btn-block">
           <i></i>
         ඉංග්‍රීසි භාෂාව - English Language      
       </a>
-  <a href="account.php?q=01&c=3&s=Environment" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=3&s=Environment" class="btn btn-primary btn-lg btn-block">
           <i></i>
           පරිසරය ආශ්‍රිත ක්‍රියාකාරකම් - Environment Related Activities
       </a>
@@ -261,28 +261,28 @@ echo '<div class="container">
 <div class="col text-center">
   <div class="col-lg-12">
     <p>
-    <a href="account.php?q=01&c=4&s=math" class="btn btn-primary btn-lg btn-block">
+    <a href="accountp.php?q=01&c=4&s=math" class="btn btn-primary btn-lg btn-block">
           <i></i>
           ගණිතය  - Mathematics
       </a>
-      <a href="account.php?q=01&c=4&s=Buddhism" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=4&s=Buddhism" class="btn btn-primary btn-lg btn-block">
           <i></i>
           බුද්ධ ධර්මය  -  Buddhism
       </a>
       
-      <a href="account.php?q=01&c=4&s=Sinhala" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=4&s=Sinhala" class="btn btn-primary btn-lg btn-block">
           <i></i>
           මව්බස - Sinhala Language 
       </a>
-      <a href="account.php?q=01&c=4&s=Tamil" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=4&s=Tamil" class="btn btn-primary btn-lg btn-block">
         <i></i>
          දෙමළ භාෂාව  - Tamil Language     
       </a>
-      <a href="account.php?q=01&c=4&s=English" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=4&s=English" class="btn btn-primary btn-lg btn-block">
           <i></i>
         ඉංග්‍රීසි භාෂාව - English Language      
       </a>
-  <a href="account.php?q=01&c=4&s=Environment" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=4&s=Environment" class="btn btn-primary btn-lg btn-block">
           <i></i>
           පරිසරය ආශ්‍රිත ක්‍රියාකාරකම් - Environment Related Activities
       </a>
@@ -304,28 +304,28 @@ echo '<div class="container">
 <div class="col text-center">
   <div class="col-lg-12">
     <p>
-    <a href="account.php?q=01&c=5&s=math" class="btn btn-primary btn-lg btn-block">
+    <a href="accountp.php?q=01&c=5&s=math" class="btn btn-primary btn-lg btn-block">
           <i></i>
           ගණිතය  - Mathematics
       </a>
-      <a href="account.php?q=01&c=5&s=Buddhism" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=5&s=Buddhism" class="btn btn-primary btn-lg btn-block">
           <i></i>
           බුද්ධ ධර්මය  -  Buddhism
       </a>
       
-      <a href="account.php?q=01&c=5&s=Sinhala" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=5&s=Sinhala" class="btn btn-primary btn-lg btn-block">
           <i></i>
           මව්බස - Sinhala Language 
       </a>
-      <a href="account.php?q=01&c=5&s=Tamil" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=5&s=Tamil" class="btn btn-primary btn-lg btn-block">
         <i></i>
          දෙමළ භාෂාව  - Tamil Language     
       </a>
-      <a href="account.php?q=01&c=5&s=English" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=5&s=English" class="btn btn-primary btn-lg btn-block">
           <i></i>
         ඉංග්‍රීසි භාෂාව - English Language      
       </a>
-  <a href="account.php?q=01&c=5&s=Environment" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=5&s=Environment" class="btn btn-primary btn-lg btn-block">
           <i></i>
           පරිසරය ආශ්‍රිත ක්‍රියාකාරකම් - Environment Related Activities
       </a>
@@ -347,63 +347,63 @@ if(@$_GET['q']== 6)
   <div class="col text-center">
     <div class="col-lg-12">
       <p>
-      <a href="account.php?q=01&c=6&s=Math" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=6&s=Math" class="btn btn-primary btn-lg btn-block">
       <i></i>
       ගණිතය  - Mathematics
   </a>
-  <a href="account.php?q=01&c=6&s=Sci" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=6&s=Sci" class="btn btn-primary btn-lg btn-block">
   <i></i>
   විද්‍යාව - Science
 </a>
-  <a href="account.php?q=01&c=6&s=Buddhism" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=6&s=Buddhism" class="btn btn-primary btn-lg btn-block">
       <i></i>
       බුද්ධ ධර්මය  -  Buddhism
   </a>
   
-  <a href="account.php?q=01&c=6&s=Sinhala" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=6&s=Sinhala" class="btn btn-primary btn-lg btn-block">
       <i></i>
       සිංහල භාෂාව - Sinhala Language 
   </a>
-  <a href="account.php?q=01&c=6&s=Tamil" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=6&s=Tamil" class="btn btn-primary btn-lg btn-block">
     <i></i>
      දෙමළ භාෂාව  - Tamil Language     
   </a>
-  <a href="account.php?q=01&c=6&s=English" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=6&s=English" class="btn btn-primary btn-lg btn-block">
       <i></i>
     ඉංග්‍රීසි භාෂාව - English Language      
   </a>
-<a href="account.php?q=01&c=6&s=History" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=6&s=History" class="btn btn-primary btn-lg btn-block">
       <i></i>
       ඉතිහාසය - History
   </a>
-  <a href="account.php?q=01&c=6&s=Life" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=6&s=Life" class="btn btn-primary btn-lg btn-block">
       <i></i>
       ජීවන නිපුණතා හා පුරවැසි අධ්‍යාපනය - Life skills & Citizenshipn Education
   </a>
   
-  <a href="account.php?q=01&c=6&s=IT" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=6&s=IT" class="btn btn-primary btn-lg btn-block">
       <i></i>
       තොරතුරු හා සන්නිවේදන තාක්ෂණය - Information & Communication Technology
   </a>
   
-<a href="account.php?q=01&c=6&s=Geography" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=6&s=Geography" class="btn btn-primary btn-lg btn-block">
 <i></i>
 භූගෝල විද්‍යාව - Geography
 </a>
 
-<a href="account.php?q=01&c=6&s=Health" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=6&s=Health" class="btn btn-primary btn-lg btn-block">
 <i></i>
 සෞඛ්‍ය හා ශාරීරික අධ්‍යාපනය - Health & Physical Education
 </a>
-<a href="account.php?q=01&c=6&s=Music" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=6&s=Music" class="btn btn-primary btn-lg btn-block">
       <i></i>
       සංගීතය - Music
   </a>
-  <a href="account.php?q=01&c=6&s=Art" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=6&s=Art" class="btn btn-primary btn-lg btn-block">
       <i></i>
       චිත්‍ර කලාව - Art
   </a>
-  <a href="account.php?q=01&c=6&s=Dancing" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=6&s=Dancing" class="btn btn-primary btn-lg btn-block">
 <i></i>
 නර්තනය - Dancing
 </a>
@@ -424,63 +424,63 @@ if(@$_GET['q']== 7)
   <div class="col text-center">
     <div class="col-lg-12">
       <p>
-      <a href="account.php?q=01&c=7&s=Math" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=7&s=Math" class="btn btn-primary btn-lg btn-block">
       <i></i>
       ගණිතය  - Mathematics
   </a>
-  <a href="account.php?q=01&c=7&s=Sci" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=7&s=Sci" class="btn btn-primary btn-lg btn-block">
   <i></i>
   විද්‍යාව - Science
 </a>
-  <a href="account.php?q=01&c=7&s=Buddhism" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=7&s=Buddhism" class="btn btn-primary btn-lg btn-block">
       <i></i>
       බුද්ධ ධර්මය  -  Buddhism
   </a>
   
-  <a href="account.php?q=01&c=7&s=Sinhala" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=7&s=Sinhala" class="btn btn-primary btn-lg btn-block">
       <i></i>
       සිංහල භාෂාව - Sinhala Language 
   </a>
-  <a href="account.php?q=01&c=7&s=Tamil" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=7&s=Tamil" class="btn btn-primary btn-lg btn-block">
     <i></i>
      දෙමළ භාෂාව  - Tamil Language     
   </a>
-  <a href="account.php?q=01&c=7&s=English" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=7&s=English" class="btn btn-primary btn-lg btn-block">
       <i></i>
     ඉංග්‍රීසි භාෂාව - English Language      
   </a>
-<a href="account.php?q=01&c=7&s=History" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=7&s=History" class="btn btn-primary btn-lg btn-block">
       <i></i>
       ඉතිහාසය - History
   </a>
-  <a href="account.php?q=01&c=7&s=Life" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=7&s=Life" class="btn btn-primary btn-lg btn-block">
       <i></i>
       ජීවන නිපුණතා හා පුරවැසි අධ්‍යාපනය - Life skills & Citizenshipn Education
   </a>
   
-  <a href="account.php?q=01&c=7&s=IT" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=7&s=IT" class="btn btn-primary btn-lg btn-block">
       <i></i>
       තොරතුරු හා සන්නිවේදන තාක්ෂණය - Information & Communication Technology
   </a>
   
-<a href="account.php?q=01&c=7&s=Geography" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=7&s=Geography" class="btn btn-primary btn-lg btn-block">
 <i></i>
 භූගෝල විද්‍යාව - Geography
 </a>
 
-<a href="account.php?q=01&c=7&s=Health" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=7&s=Health" class="btn btn-primary btn-lg btn-block">
 <i></i>
 සෞඛ්‍ය හා ශාරීරික අධ්‍යාපනය - Health & Physical Education
 </a>
-<a href="account.php?q=01&c=7&s=Music" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=7&s=Music" class="btn btn-primary btn-lg btn-block">
       <i></i>
       සංගීතය - Music
   </a>
-  <a href="account.php?q=01&c=7&s=Art" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=7&s=Art" class="btn btn-primary btn-lg btn-block">
       <i></i>
       චිත්‍ර කලාව - Art
   </a>
-  <a href="account.php?q=01&c=7&s=Dancing" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=7&s=Dancing" class="btn btn-primary btn-lg btn-block">
 <i></i>
 නර්තනය - Dancing
 </a>
@@ -501,63 +501,63 @@ if(@$_GET['q']== 8)
   <div class="col text-center">
     <div class="col-lg-12">
       <p>
-      <a href="account.php?q=01&c=8&s=Math" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=8&s=Math" class="btn btn-primary btn-lg btn-block">
       <i></i>
       ගණිතය  - Mathematics
   </a>
-  <a href="account.php?q=01&c=8&s=Sci" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=8&s=Sci" class="btn btn-primary btn-lg btn-block">
   <i></i>
   විද්‍යාව - Science
 </a>
-  <a href="account.php?q=01&c=8&s=Buddhism" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=8&s=Buddhism" class="btn btn-primary btn-lg btn-block">
       <i></i>
       බුද්ධ ධර්මය  -  Buddhism
   </a>
   
-  <a href="account.php?q=01&c=8&s=Sinhala" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=8&s=Sinhala" class="btn btn-primary btn-lg btn-block">
       <i></i>
       සිංහල භාෂාව - Sinhala Language 
   </a>
-  <a href="account.php?q=01&c=8&s=Tamil" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=8&s=Tamil" class="btn btn-primary btn-lg btn-block">
     <i></i>
      දෙමළ භාෂාව  - Tamil Language     
   </a>
-  <a href="account.php?q=01&c=8&s=English" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=8&s=English" class="btn btn-primary btn-lg btn-block">
       <i></i>
     ඉංග්‍රීසි භාෂාව - English Language      
   </a>
-<a href="account.php?q=01&c=8&s=History" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=8&s=History" class="btn btn-primary btn-lg btn-block">
       <i></i>
       ඉතිහාසය - History
   </a>
-  <a href="account.php?q=01&c=8&s=Life" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=8&s=Life" class="btn btn-primary btn-lg btn-block">
       <i></i>
       ජීවන නිපුණතා හා පුරවැසි අධ්‍යාපනය - Life skills & Citizenshipn Education
   </a>
   
-  <a href="account.php?q=01&c=8&s=IT" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=8&s=IT" class="btn btn-primary btn-lg btn-block">
       <i></i>
       තොරතුරු හා සන්නිවේදන තාක්ෂණය - Information & Communication Technology
   </a>
   
-<a href="account.php?q=01&c=8&s=Geography" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=8&s=Geography" class="btn btn-primary btn-lg btn-block">
 <i></i>
 භූගෝල විද්‍යාව - Geography
 </a>
 
-<a href="account.php?q=01&c=8&s=Health" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=8&s=Health" class="btn btn-primary btn-lg btn-block">
 <i></i>
 සෞඛ්‍ය හා ශාරීරික අධ්‍යාපනය - Health & Physical Education
 </a>
-<a href="account.php?q=01&c=8&s=Music" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=8&s=Music" class="btn btn-primary btn-lg btn-block">
       <i></i>
       සංගීතය - Music
   </a>
-  <a href="account.php?q=01&c=8&s=Art" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=8&s=Art" class="btn btn-primary btn-lg btn-block">
       <i></i>
       චිත්‍ර කලාව - Art
   </a>
-  <a href="account.php?q=01&c=8&s=Dancing" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=8&s=Dancing" class="btn btn-primary btn-lg btn-block">
 <i></i>
 නර්තනය - Dancing
 </a>
@@ -578,63 +578,63 @@ if(@$_GET['q']== 9)
   <div class="col text-center">
     <div class="col-lg-12">
       <p>
-      <a href="account.php?q=01&c=9&s=Math" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=9&s=Math" class="btn btn-primary btn-lg btn-block">
       <i></i>
       ගණිතය  - Mathematics
   </a>
-  <a href="account.php?q=01&c=9&s=Sci" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=9&s=Sci" class="btn btn-primary btn-lg btn-block">
   <i></i>
   විද්‍යාව - Science
 </a>
-  <a href="account.php?q=01&c=9&s=Buddhism" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=9&s=Buddhism" class="btn btn-primary btn-lg btn-block">
       <i></i>
       බුද්ධ ධර්මය  -  Buddhism
   </a>
   
-  <a href="account.php?q=01&c=9&s=Sinhala" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=9&s=Sinhala" class="btn btn-primary btn-lg btn-block">
       <i></i>
       සිංහල භාෂාව - Sinhala Language 
   </a>
-  <a href="account.php?q=01&c=9&s=Tamil" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=9&s=Tamil" class="btn btn-primary btn-lg btn-block">
     <i></i>
      දෙමළ භාෂාව  - Tamil Language     
   </a>
-  <a href="account.php?q=01&c=9&s=English" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=9&s=English" class="btn btn-primary btn-lg btn-block">
       <i></i>
     ඉංග්‍රීසි භාෂාව - English Language      
   </a>
-<a href="account.php?q=01&c=9&s=History" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=9&s=History" class="btn btn-primary btn-lg btn-block">
       <i></i>
       ඉතිහාසය - History
   </a>
-  <a href="account.php?q=01&c=9&s=Life" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=9&s=Life" class="btn btn-primary btn-lg btn-block">
       <i></i>
       ජීවන නිපුණතා හා පුරවැසි අධ්‍යාපනය - Life skills & Citizenshipn Education
   </a>
   
-  <a href="account.php?q=01&c=9&s=IT" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=9&s=IT" class="btn btn-primary btn-lg btn-block">
       <i></i>
       තොරතුරු හා සන්නිවේදන තාක්ෂණය - Information & Communication Technology
   </a>
   
-<a href="account.php?q=01&c=9&s=Geography" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=9&s=Geography" class="btn btn-primary btn-lg btn-block">
 <i></i>
 භූගෝල විද්‍යාව - Geography
 </a>
 
-<a href="account.php?q=01&c=9&s=Health" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=9&s=Health" class="btn btn-primary btn-lg btn-block">
 <i></i>
 සෞඛ්‍ය හා ශාරීරික අධ්‍යාපනය - Health & Physical Education
 </a>
-<a href="account.php?q=01&c=9&s=Music" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=9&s=Music" class="btn btn-primary btn-lg btn-block">
       <i></i>
       සංගීතය - Music
   </a>
-  <a href="account.php?q=01&c=9&s=Art" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=9&s=Art" class="btn btn-primary btn-lg btn-block">
       <i></i>
       චිත්‍ර කලාව - Art
   </a>
-  <a href="account.php?q=01&c=9&s=Dancing" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=9&s=Dancing" class="btn btn-primary btn-lg btn-block">
 <i></i>
 නර්තනය - Dancing
 </a>
@@ -655,83 +655,83 @@ if(@$_GET['q']== 10)
   <div class="col text-center">
     <div class="col-lg-12">
       <p>
-      <a href="account.php?q=01&c=10&s=Math" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=10&s=Math" class="btn btn-primary btn-lg btn-block">
       <i></i>
       ගණිතය  - Mathematics
   </a>
-  <a href="account.php?q=01&c=10&s=Sci" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=10&s=Sci" class="btn btn-primary btn-lg btn-block">
   <i></i>
   විද්‍යාව - Science
 </a>
-  <a href="account.php?q=01&c=10&s=Buddhism" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=10&s=Buddhism" class="btn btn-primary btn-lg btn-block">
       <i></i>
       බුද්ධ ධර්මය  -  Buddhism
   </a>
   
-  <a href="account.php?q=01&c=10&s=Sinhala" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=10&s=Sinhala" class="btn btn-primary btn-lg btn-block">
       <i></i>
       සිංහල භාෂාව - Sinhala Language 
   </a>
-  <a href="account.php?q=01&c=10&s=Tamil" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=10&s=Tamil" class="btn btn-primary btn-lg btn-block">
     <i></i>
      දෙමළ භාෂාව  - Tamil Language     
   </a>
-  <a href="account.php?q=01&c=10&s=English" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=10&s=English" class="btn btn-primary btn-lg btn-block">
       <i></i>
     ඉංග්‍රීසි භාෂාව - English Language      
   </a>
-<a href="account.php?q=01&c=10&s=History" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=10&s=History" class="btn btn-primary btn-lg btn-block">
       <i></i>
       ඉතිහාසය - History
   </a>
-  <a href="account.php?q=01&c=10&s=Life" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=10&s=Life" class="btn btn-primary btn-lg btn-block">
       <i></i>
       ජීවන නිපුණතා හා පුරවැසි අධ්‍යාපනය - Life skills & Citizenshipn Education
   </a>
   
-  <a href="account.php?q=01&c=10&s=IT" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=10&s=IT" class="btn btn-primary btn-lg btn-block">
       <i></i>
       තොරතුරු හා සන්නිවේදන තාක්ෂණය - Information & Communication Technology
   </a>
   
-<a href="account.php?q=01&c=10&s=Geography" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=10&s=Geography" class="btn btn-primary btn-lg btn-block">
 <i></i>
 භූගෝල විද්‍යාව - Geography
 </a>
 
-<a href="account.php?q=01&c=10&s=Health" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=10&s=Health" class="btn btn-primary btn-lg btn-block">
 <i></i>
 සෞඛ්‍ය හා ශාරීරික අධ්‍යාපනය - Health & Physical Education
 </a>
-<a href="account.php?q=01&c=10&s=Music" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=10&s=Music" class="btn btn-primary btn-lg btn-block">
       <i></i>
       සංගීතය - Music
   </a>
-  <a href="account.php?q=01&c=10&s=Art" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=10&s=Art" class="btn btn-primary btn-lg btn-block">
       <i></i>
       චිත්‍ර කලාව - Art
   </a>
-  <a href="account.php?q=01&c=10&s=Dancing" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=10&s=Dancing" class="btn btn-primary btn-lg btn-block">
 <i></i>
 නර්තනය - Dancing
 </a>
-<a href="account.php?q=01&c=10&s=BusinessStu" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=10&s=BusinessStu" class="btn btn-primary btn-lg btn-block">
 <i></i>
 ව්‍යාපාර අධ්‍යයනය හා ගිණුම්කරණය - Business Studies & Accounts
 </a>
-<a href="account.php?q=01&c=10&s=Home" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=10&s=Home" class="btn btn-primary btn-lg btn-block">
 <i></i>
 ගෘහ ආර්ථික විද්‍යාව - Home Economics
 </a>
-<a href="account.php?q=01&c=10&s=Enterpreneurial" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=10&s=Enterpreneurial" class="btn btn-primary btn-lg btn-block">
 <i></i>
 ව්‍යවසායකත්ව අධ්‍යයනය - Enterpreneurial Education
 </a>
-<a href="account.php?q=01&c=10&s=engLiterature" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=10&s=engLiterature" class="btn btn-primary btn-lg btn-block">
 <i></i>
 ඉංග්‍රීසි භාෂාව හා සාහිත්‍ය - English Literature
 </a>
-<a href="account.php?q=01&c=10&s=sinLiterature" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=10&s=sinLiterature" class="btn btn-primary btn-lg btn-block">
 <i></i>
 සිංහල භාෂාව හා සාහිත්‍ය - Sinhala Literature
 </a>
@@ -753,83 +753,83 @@ if(@$_GET['q']== 11)
   <div class="col text-center">
     <div class="col-lg-12">
       <p>
-      <a href="account.php?q=01&c=11&s=Math" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=11&s=Math" class="btn btn-primary btn-lg btn-block">
       <i></i>
       ගණිතය  - Mathematics
   </a>
-  <a href="account.php?q=01&c=11&s=Sci" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=11&s=Sci" class="btn btn-primary btn-lg btn-block">
   <i></i>
   විද්‍යාව - Science
 </a>
-  <a href="account.php?q=01&c=11&s=Buddhism" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=11&s=Buddhism" class="btn btn-primary btn-lg btn-block">
       <i></i>
       බුද්ධ ධර්මය  -  Buddhism
   </a>
   
-  <a href="account.php?q=01&c=11&s=Sinhala" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=11&s=Sinhala" class="btn btn-primary btn-lg btn-block">
       <i></i>
       සිංහල භාෂාව - Sinhala Language 
   </a>
-  <a href="account.php?q=01&c=11&s=Tamil" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=11&s=Tamil" class="btn btn-primary btn-lg btn-block">
     <i></i>
      දෙමළ භාෂාව  - Tamil Language     
   </a>
-  <a href="account.php?q=01&c=11&s=English" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=11&s=English" class="btn btn-primary btn-lg btn-block">
       <i></i>
     ඉංග්‍රීසි භාෂාව - English Language      
   </a>
-<a href="account.php?q=01&c=11&s=History" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=11&s=History" class="btn btn-primary btn-lg btn-block">
       <i></i>
       ඉතිහාසය - History
   </a>
-  <a href="account.php?q=01&c=11&s=Life" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=11&s=Life" class="btn btn-primary btn-lg btn-block">
       <i></i>
       ජීවන නිපුණතා හා පුරවැසි අධ්‍යාපනය - Life skills & Citizenshipn Education
   </a>
   
-  <a href="account.php?q=01&c=11&s=IT" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=11&s=IT" class="btn btn-primary btn-lg btn-block">
       <i></i>
       තොරතුරු හා සන්නිවේදන තාක්ෂණය - Information & Communication Technology
   </a>
   
-<a href="account.php?q=01&c=11&s=Geography" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=11&s=Geography" class="btn btn-primary btn-lg btn-block">
 <i></i>
 භූගෝල විද්‍යාව - Geography
 </a>
 
-<a href="account.php?q=01&c=11&s=Health" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=11&s=Health" class="btn btn-primary btn-lg btn-block">
 <i></i>
 සෞඛ්‍ය හා ශාරීරික අධ්‍යාපනය - Health & Physical Education
 </a>
-<a href="account.php?q=01&c=11&s=Music" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=11&s=Music" class="btn btn-primary btn-lg btn-block">
       <i></i>
       සංගීතය - Music
   </a>
-  <a href="account.php?q=01&c=11&s=Art" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=11&s=Art" class="btn btn-primary btn-lg btn-block">
       <i></i>
       චිත්‍ර කලාව - Art
   </a>
-  <a href="account.php?q=01&c=11&s=Dancing" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=11&s=Dancing" class="btn btn-primary btn-lg btn-block">
 <i></i>
 නර්තනය - Dancing
 </a>
-<a href="account.php?q=01&c=11&s=BusinessStu" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=11&s=BusinessStu" class="btn btn-primary btn-lg btn-block">
 <i></i>
 ව්‍යාපාර අධ්‍යයනය හා ගිණුම්කරණය - Business Studies & Accounts
 </a>
-<a href="account.php?q=01&c=11&s=Home" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=11&s=Home" class="btn btn-primary btn-lg btn-block">
 <i></i>
 ගෘහ ආර්ථික විද්‍යාව - Home Economics
 </a>
-<a href="account.php?q=01&c=11&s=Enterpreneurial" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=11&s=Enterpreneurial" class="btn btn-primary btn-lg btn-block">
 <i></i>
 ව්‍යවසායකත්ව අධ්‍යයනය - Enterpreneurial Education
 </a>
-<a href="account.php?q=01&c=11&s=engLiterature" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=11&s=engLiterature" class="btn btn-primary btn-lg btn-block">
 <i></i>
 ඉංග්‍රීසි භාෂාව හා සාහිත්‍ය - English Literature
 </a>
-<a href="account.php?q=01&c=11&s=sinLiterature" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=11&s=sinLiterature" class="btn btn-primary btn-lg btn-block">
 <i></i>
 සිංහල භාෂාව හා සාහිත්‍ය - Sinhala Literature
 </a>
@@ -851,20 +851,20 @@ if(@$_GET['q']== 112)
   <div class="col text-center">
     <div class="col-lg-12">
       <p>
-      <a href="account.php?q=01&c=112&s=Physics" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=112&s=Physics" class="btn btn-primary btn-lg btn-block">
       <i></i>
       Physics - භෞතික විද්‍යාව
   </a>
-  <a href="account.php?q=01&c=112&s=Chemistry" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=112&s=Chemistry" class="btn btn-primary btn-lg btn-block">
   <i></i>
   Chemistry - රසායන විද්‍යාව
 </a>
-  <a href="account.php?q=01&c=112&s=Combined" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=112&s=Combined" class="btn btn-primary btn-lg btn-block">
       <i></i>
       Combined Maths - සංයුක්ත ගණිතය
   </a>
   
-  <a href="account.php?q=01&c=112&s=IT" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=112&s=IT" class="btn btn-primary btn-lg btn-block">
     <i></i>
     Information and Communication Technology  - තොරතුරු තාක්ෂනය     
   </a>
@@ -886,20 +886,20 @@ if(@$_GET['q']== 212)
   <div class="col text-center">
     <div class="col-lg-12">
       <p>
-      <a href="account.php?q=01&c=212&s=Physics" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=212&s=Physics" class="btn btn-primary btn-lg btn-block">
       <i></i>
       Physics - භෞතික විද්‍යාව
   </a>
-  <a href="account.php?q=01&c=212&s=Chemistry" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=212&s=Chemistry" class="btn btn-primary btn-lg btn-block">
   <i></i>
   Chemistry - රසායන විද්‍යාව
 </a>
-  <a href="account.php?q=01&c=212&s=Biology" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=212&s=Biology" class="btn btn-primary btn-lg btn-block">
       <i></i>
       Biology - ජීව විද්‍යාව
   </a>
   
-  <a href="account.php?q=01&c=212&s=Agricultural" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=212&s=Agricultural" class="btn btn-primary btn-lg btn-block">
     <i></i>
     Agricultural science -  කෘෂිකාර්මික විද්‍යාව    
   </a>
@@ -922,24 +922,24 @@ if(@$_GET['q']== 312)
   <div class="col text-center">
     <div class="col-lg-12">
       <p>
-      <a href="account.php?q=01&c=312&s=Accounting" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=312&s=Accounting" class="btn btn-primary btn-lg btn-block">
       <i></i>
       Accounting - ගිණුම්කරණය
   </a>
-  <a href="account.php?q=01&c=312&s=BusinessStu" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=312&s=BusinessStu" class="btn btn-primary btn-lg btn-block">
   <i></i>
   Business Studies  - ව්‍යාපාර අධ්‍යයනය
 </a>
-  <a href="account.php?q=01&c=312&s=Economics" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=312&s=Economics" class="btn btn-primary btn-lg btn-block">
       <i></i>
       Economics - ආර්ථික විද්‍යාව
   </a>
   
-  <a href="account.php?q=01&c=312&s=IT" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=312&s=IT" class="btn btn-primary btn-lg btn-block">
     <i></i>
     Information Technology -  තොරතුරු තාක්ෂනය    
   </a>
-  <a href="account.php?q=01&c=312&s=BusinessSta" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=312&s=BusinessSta" class="btn btn-primary btn-lg btn-block">
     <i></i>
     Business Statistics -  ව්‍යාපාර සංඛ්‍යානය 
   </a>
@@ -962,36 +962,36 @@ if(@$_GET['q']== 412)
   <div class="col text-center">
     <div class="col-lg-12">
       <p>
-      <a href="account.php?q=01&c=412&s=Sinhala" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=412&s=Sinhala" class="btn btn-primary btn-lg btn-block">
       <i></i>
       Sinhala - උසස් පෙළ සිංහල
   </a>
-  <a href="account.php?q=01&c=412&s=Logic" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=412&s=Logic" class="btn btn-primary btn-lg btn-block">
   <i></i>
   Logic - තර්ක ශාස්ත්‍රය
 </a>
-  <a href="account.php?q=01&c=412&s=History" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=412&s=History" class="btn btn-primary btn-lg btn-block">
       <i></i>
       History - ලංකා සහ ඉන්දියා ඉතිහාසය
   </a>
   
-  <a href="account.php?q=01&c=412&s=Geography" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=412&s=Geography" class="btn btn-primary btn-lg btn-block">
     <i></i>
     Geography - භූගෝල විද්‍යාව   
   </a>
-  <a href="account.php?q=01&c=412&s=Buddhist" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=412&s=Buddhist" class="btn btn-primary btn-lg btn-block">
     <i></i>
     Buddhist Civilization - බෞද්ධ දර්ශනය ස‍හ බෞද්ධ ශීෂ්ඨාචාරය 
   </a>
-  <a href="account.php?q=01&c=412&s=Political" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=412&s=Political" class="btn btn-primary btn-lg btn-block">
     <i></i>
     Political Science - දේශපාලන විද්‍යාව  
   </a>
-  <a href="account.php?q=01&c=412&s=Economics" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=412&s=Economics" class="btn btn-primary btn-lg btn-block">
   <i></i>
   Economics - ආර්ථික විද්‍යාව 
 </a>
-  <a href="account.php?q=01&c=412&s=Music" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=412&s=Music" class="btn btn-primary btn-lg btn-block">
     <i></i>
     Music - උසස් පෙළ සංගීතය
   </a>
@@ -1014,34 +1014,34 @@ if(@$_GET['q']== 512)
   <div class="col text-center">
     <div class="col-lg-12">
       <p>
-      <a href="account.php?q=01&c=512&s=Science4" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=512&s=Science4" class="btn btn-primary btn-lg btn-block">
       <i></i>
       Science for Technology - තාක්ෂණවේදය සදහා විද්‍යාව 
   </a>
-  <a href="account.php?q=01&c=512&s=Bio" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=512&s=Bio" class="btn btn-primary btn-lg btn-block">
   <i></i>
   Bio Systems - ජෛව පද්ධති
 </a>
-  <a href="account.php?q=01&c=512&s=Engineering" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=512&s=Engineering" class="btn btn-primary btn-lg btn-block">
       <i></i>
       Engineering Technology - ඉංජිනේරු තාක්ෂණය 
   </a>
   
-  <a href="account.php?q=01&c=512&s=Geography" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=512&s=Geography" class="btn btn-primary btn-lg btn-block">
     <i></i>
     Geography - භූගෝල විද්‍යාව   
   </a>
   
   
-  <a href="account.php?q=01&c=512&s=Economics" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=512&s=Economics" class="btn btn-primary btn-lg btn-block">
   <i></i>
   Economics - ආර්ථික විද්‍යාව 
 </a>
-<a href="account.php?q=01&c=512&s=it" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=512&s=it" class="btn btn-primary btn-lg btn-block">
 <i></i>
 Information Technology -  තොරතුරු තාක්ෂනය    
 </a>
-<a href="account.php?q=01&c=512&s=Accounting" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=512&s=Accounting" class="btn btn-primary btn-lg btn-block">
 <i></i>
 Accounting - ගිණුම්කරණය
 </a>
@@ -1063,20 +1063,20 @@ if(@$_GET['q']== 113)
   <div class="col text-center">
     <div class="col-lg-12">
       <p>
-      <a href="account.php?q=01&c=113&s=Physics" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=113&s=Physics" class="btn btn-primary btn-lg btn-block">
       <i></i>
       Physics - භෞතික විද්‍යාව
   </a>
-  <a href="account.php?q=01&c=113&s=Chemistry" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=113&s=Chemistry" class="btn btn-primary btn-lg btn-block">
   <i></i>
   Chemistry - රසායන විද්‍යාව
 </a>
-  <a href="account.php?q=01&c=113&s=Combined" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=113&s=Combined" class="btn btn-primary btn-lg btn-block">
       <i></i>
       Combined Maths - සංයුක්ත ගණිතය
   </a>
   
-  <a href="account.php?q=01&c=113&s=IT" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=113&s=IT" class="btn btn-primary btn-lg btn-block">
     <i></i>
     Information and Communication Technology  - තොරතුරු තාක්ෂනය     
   </a>
@@ -1098,20 +1098,20 @@ if(@$_GET['q']== 213)
   <div class="col text-center">
     <div class="col-lg-12">
       <p>
-      <a href="account.php?q=01&c=213&s=Physics" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=213&s=Physics" class="btn btn-primary btn-lg btn-block">
       <i></i>
       Physics - භෞතික විද්‍යාව
   </a>
-  <a href="account.php?q=01&c=213&s=Chemistry" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=213&s=Chemistry" class="btn btn-primary btn-lg btn-block">
   <i></i>
   Chemistry - රසායන විද්‍යාව
 </a>
-  <a href="account.php?q=01&c=213&s=Biology" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=213&s=Biology" class="btn btn-primary btn-lg btn-block">
       <i></i>
       Biology - ජීව විද්‍යාව
   </a>
   
-  <a href="account.php?q=01&c=213&s=Agricultural" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=213&s=Agricultural" class="btn btn-primary btn-lg btn-block">
     <i></i>
     Agricultural science -  කෘෂිකාර්මික විද්‍යාව    
   </a>
@@ -1134,24 +1134,24 @@ if(@$_GET['q']== 313)
   <div class="col text-center">
     <div class="col-lg-12">
       <p>
-      <a href="account.php?q=01&c=313&s=Accounting" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=313&s=Accounting" class="btn btn-primary btn-lg btn-block">
       <i></i>
       Accounting - ගිණුම්කරණය
   </a>
-  <a href="account.php?q=01&c=313&s=BusinessStu" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=313&s=BusinessStu" class="btn btn-primary btn-lg btn-block">
   <i></i>
   Business Studies  - ව්‍යාපාර අධ්‍යයනය
 </a>
-  <a href="account.php?q=01&c=313&s=Economics" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=313&s=Economics" class="btn btn-primary btn-lg btn-block">
       <i></i>
       Economics - ආර්ථික විද්‍යාව
   </a>
   
-  <a href="account.php?q=01&c=313&s=IT" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=313&s=IT" class="btn btn-primary btn-lg btn-block">
     <i></i>
     Information Technology -  තොරතුරු තාක්ෂනය    
   </a>
-  <a href="account.php?q=01&c=313&s=BusinessSta" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=313&s=BusinessSta" class="btn btn-primary btn-lg btn-block">
     <i></i>
     Business Statistics -  ව්‍යාපාර සංඛ්‍යානය 
   </a>
@@ -1174,36 +1174,36 @@ if(@$_GET['q']== 413)
   <div class="col text-center">
     <div class="col-lg-12">
       <p>
-      <a href="account.php?q=01&c=413&s=Sinhala" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=413&s=Sinhala" class="btn btn-primary btn-lg btn-block">
       <i></i>
       Sinhala - උසස් පෙළ සිංහල
   </a>
-  <a href="account.php?q=01&c=413&s=Logic" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=413&s=Logic" class="btn btn-primary btn-lg btn-block">
   <i></i>
   Logic - තර්ක ශාස්ත්‍රය
 </a>
-  <a href="account.php?q=01&c=413&s=History" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=413&s=History" class="btn btn-primary btn-lg btn-block">
       <i></i>
       History - ලංකා සහ ඉන්දියා ඉතිහාසය
   </a>
   
-  <a href="account.php?q=01&c=413&s=Geography" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=413&s=Geography" class="btn btn-primary btn-lg btn-block">
     <i></i>
     Geography - භූගෝල විද්‍යාව   
   </a>
-  <a href="account.php?q=01&c=413&s=Buddhist" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=413&s=Buddhist" class="btn btn-primary btn-lg btn-block">
     <i></i>
     Buddhist Civilization - බෞද්ධ දර්ශනය ස‍හ බෞද්ධ ශීෂ්ඨාචාරය 
   </a>
-  <a href="account.php?q=01&c=413&s=Political" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=413&s=Political" class="btn btn-primary btn-lg btn-block">
     <i></i>
     Political Science - දේශපාලන විද්‍යාව  
   </a>
-  <a href="account.php?q=01&c=413&s=Economics" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=413&s=Economics" class="btn btn-primary btn-lg btn-block">
   <i></i>
   Economics - ආර්ථික විද්‍යාව 
 </a>
-  <a href="account.php?q=01&c=413&s=Music" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=413&s=Music" class="btn btn-primary btn-lg btn-block">
     <i></i>
     Music - උසස් පෙළ සංගීතය
   </a>
@@ -1226,34 +1226,34 @@ if(@$_GET['q']== 513)
   <div class="col text-center">
     <div class="col-lg-12">
       <p>
-      <a href="account.php?q=01&c=513&s=Science4" class="btn btn-primary btn-lg btn-block">
+      <a href="accountp.php?q=01&c=513&s=Science4" class="btn btn-primary btn-lg btn-block">
       <i></i>
       Science for Technology - තාක්ෂණවේදය සදහා විද්‍යාව 
   </a>
-  <a href="account.php?q=01&c=513&s=Bio" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=513&s=Bio" class="btn btn-primary btn-lg btn-block">
   <i></i>
   Bio Systems - ජෛව පද්ධති
 </a>
-  <a href="account.php?q=01&c=513&s=Engineering" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=513&s=Engineering" class="btn btn-primary btn-lg btn-block">
       <i></i>
       Engineering Technology - ඉංජිනේරු තාක්ෂණය 
   </a>
   
-  <a href="account.php?q=01&c=513&s=Geography" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=513&s=Geography" class="btn btn-primary btn-lg btn-block">
     <i></i>
     Geography - භූගෝල විද්‍යාව   
   </a>
   
   
-  <a href="account.php?q=01&c=513&s=Economics" class="btn btn-primary btn-lg btn-block">
+  <a href="accountp.php?q=01&c=513&s=Economics" class="btn btn-primary btn-lg btn-block">
   <i></i>
   Economics - ආර්ථික විද්‍යාව 
 </a>
-<a href="account.php?q=01&c=513&s=it" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=513&s=it" class="btn btn-primary btn-lg btn-block">
 <i></i>
 Information Technology -  තොරතුරු තාක්ෂනය    
 </a>
-<a href="account.php?q=01&c=513&s=Accounting" class="btn btn-primary btn-lg btn-block">
+<a href="accountp.php?q=01&c=513&s=Accounting" class="btn btn-primary btn-lg btn-block">
 <i></i>
 Accounting - ගිණුම්කරණය
 </a>

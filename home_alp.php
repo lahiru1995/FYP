@@ -95,23 +95,23 @@
       <div class="col text-center">
         <div class="col-lg-12">
           <p>
-            <a style="width: 200px" href="class01.php?q=112" class="btn btn-sq-lg btn-info">
+            <a style="width: 200px" href="class01p.php?q=112" class="btn btn-sq-lg btn-info">
                 <i class="fa fa-book fa-5x"></i><br/>
                -  Physical Science Subjects - <br> 
             </a>
-            <a style="width: 200px" href="class01.php?q=212" class="btn btn-sq-lg btn-info">
+            <a style="width: 200px" href="class01p.php?q=212" class="btn btn-sq-lg btn-info">
                 <i class="fa fa-book fa-5x"></i><br/>
                 -  Biological Science Subjects - <br>
             </a>
-            <a style="width: 200px" href="class01.php?q=312" class="btn btn-sq-lg btn-info">
+            <a style="width: 200px" href="class01p.php?q=312" class="btn btn-sq-lg btn-info">
                 <i class="fa fa-book fa-5x"></i><br/>
                 -  Commerce Subjects - <br> 
             </a>
-            <a style="width: 200px" href="class01.php?q=412" class="btn btn-sq-lg btn-info">
+            <a style="width: 200px" href="class01p.php?q=412" class="btn btn-sq-lg btn-info">
                 <i class="fa fa-book fa-5x"></i><br/>
                 -  Arts Subjects - <br> 
             </a>
-            <a style="width: 200px" href="class01.php?q=512" class="btn btn-sq-lg btn-info">
+            <a style="width: 200px" href="class01p.php?q=512" class="btn btn-sq-lg btn-info">
                 <i class="fa fa-book fa-5x"></i><br/>
                 -  Technology Subjects - <br> 
             </a>

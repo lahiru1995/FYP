@@ -52,7 +52,10 @@
 </div>
 </div></div>
 <div class="bg">
-
+<?php 
+$class=@$_GET['c'];
+$subject=@$_GET['s'];
+?>
 <!--navigation menu-->
 <nav class="navbar navbar-default title1">
   <div class="container-fluid">
@@ -64,7 +67,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar" <?php  echo'class="active"'; ?> ></span>
       </button>
-      <a class="navbar-brand" href="#"><b>Netcamp</b></a>
+      <a class="navbar-brand" <?php echo'href="class01p.php?q='.$class.'"'; ?> ><b>Back</b></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -89,41 +92,77 @@
 <!--class button start-->
 <br>
 
+<?php
+include_once 'dbConnection.php';
+//view paper marks start
+if(@$_GET['q']==01) {
+  $class=@$_GET['c'];
+  $subject=@$_GET['s'];
+//question paper
+echo ' <h3 align="center" >Question paper Marks  </h3> ';
+
+$qpp=mysqli_query($con,"SELECT * FROM lesson where Category= '' AND marksLocation != '' AND grade='$class' AND subject='$subject'" )or die('Error223');
+echo  '<div class="panel title"><div class="table-responsive">
+<table class="table table-striped title1" >
+<tr style="color:red"><td><b>No</b></td><td><b>Chapter</b></td><td><b>Question Title</b></td><td><b>Marks</b></td></tr>';
+$c=0;
+while($row=mysqli_fetch_array($qpp) )
+{
+$c1=$row['LessonChapter'];
+$t=$row['LessonTitle'];
+$l=$row['FileLocation'];
+$categ=$row['Category'];
+$lid=$row['LessonID'];
+$ml=$row['marksLocation'];
+
+$c++;
+echo '<tr><td style="color:#99cc32"><b>'.$c.'</b></td><td>'.$c1.'</td><td>'.$t.'</td>';
+
+if ($categ=="") {
+  # code...
+  $view = "accountp.php?q=14&id=".$lid."&c=".$class."&s=".$subject;
+  $view1 = "accountp.php?q=14&id=".$lid."&c=".$class."&s=".$subject;
+}else{
+  $view = "accountp.php?q=14&id=".$lid."&c=".$class."&s=".$subject;
+
+}
+
+echo '<td > 
+<a href="'.$ml.'" class="btn btn-primary btn-xs  " download><i class="fa fa-download"></i> Downlaod</a>
+<a title="View Files"  href="'.$view.'" class="btn btn-info btn-xs" ><span class="fa fa-info fw-fa"></span> View</a>
+ </td>';
+
+}
+echo '</table></div></div>';
+}
+?>
+
+
+<!--account view marks file start-->
+<?php if(@$_GET['q']==14) {
+  require_once ("include/initialize.php");
+@$id = $_GET['id'];
+ if($id==''){
+//redirect("index.php");
+}
+$lesson = New Lesson();
+$res = $lesson->single_lesson($id);
+$lc = $res->LessonChapter;
+$lid = $res->LessonID;
+$lt = $res->LessonTitle; 
+$fl = $res->FileLocation;
+$cc = $res->Category;
+$ml = $res->marksLocation;
+
+$title = "view file";
+
+echo '<h2><?php echo '.$title.' ; ?></h2>
+<p style="font-size: 18px;font-weight: bold;">Chapter : '.$lc.' | Title : '.$lt.'</p>
 <div class="container">
-
-      <div class="row" style="margin-top: 150px">
-      <div class="col text-center">
-        <div class="col-lg-12">
-          <p>
-            <a style="width: 200px" href="class01.php?q=112" class="btn btn-sq-lg btn-info">
-                <i class="fa fa-book fa-5x"></i><br/>
-               -  Physical Science Subjects - <br> 
-            </a>
-            <a style="width: 200px" href="class01.php?q=212" class="btn btn-sq-lg btn-info">
-                <i class="fa fa-book fa-5x"></i><br/>
-                -  Biological Science Subjects - <br>
-            </a>
-            <a style="width: 200px" href="class01.php?q=312" class="btn btn-sq-lg btn-info">
-                <i class="fa fa-book fa-5x"></i><br/>
-                -  Commerce Subjects - <br> 
-            </a>
-            <a style="width: 200px" href="class01.php?q=412" class="btn btn-sq-lg btn-info">
-                <i class="fa fa-book fa-5x"></i><br/>
-                -  Arts Subjects - <br> 
-            </a>
-            <a style="width: 200px" href="class01.php?q=512" class="btn btn-sq-lg btn-info">
-                <i class="fa fa-book fa-5x"></i><br/>
-                -  Technology Subjects - <br> 
-            </a>
-          </p>
-        </div>
-        </div>
-    </div>
-
-    
-
-</div>
-
+	<embed src="'.$ml.'" type="application/pdf" width="100%" height="600px" />
+</div>';
+}
+?>
 <!--class button end-->
 
 

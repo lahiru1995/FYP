@@ -662,13 +662,13 @@ echo '
 	<style>
 	.centeralised{
 	margin:10px auto;
-	width:1000px;
+	width:auto;
 	text-align:center;
 }
 
 .chathistory{
 	min-height:500px;
-	width:600px;
+	width:80%;
 	margin:10px auto;
 	padding:10px;
 	background:#f1f1f1;
@@ -680,7 +680,7 @@ echo '
 
 .txtarea{
 	min-height:100px;
-	width:600px;
+	width:80%;
 	margin:10px auto;
 	padding:10px;
 }
@@ -743,13 +743,15 @@ var c = "<?php echo $class1; ?>";
 <!--Footer start-->
 <div class="row footer">
 <div class="col-md-3 box">
-<a href="http://www.projectworlds.in/online-examination" target="_blank">About us</a>
+<a href="aboutus.php" target="_blank" >About us</a>
 </div>
 <div class="col-md-3 box">
-<a href="#" data-toggle="modal" data-target="#login">Admin Login</a></div>
-<div class="col-md-3 box">
-<a href="#" data-toggle="modal" data-target="#developers">Developers</a>
+<a href="home_p.php" target="_blank">Parents Login</a>
 </div>
+
+<div class="col-md-3 box">
+<a href="#" data-toggle="modal" data-target="#login">Teachers Login</a></div>
+
 <div class="col-md-3 box">
 <a href="feedback.php" target="_blank">Feedback</a></div></div>
 <!-- Modal For Developers-->
